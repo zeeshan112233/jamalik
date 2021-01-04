@@ -82,14 +82,6 @@ class country_TF extends StatelessWidget {
           children: [
             IntlPhoneField(
               decoration: InputDecoration(
-                //decoration for Input Field
-                // labelText: 'Phone Number',
-                // focusedBorder: OutlineInputBorder(
-                //   borderSide: BorderSide(
-                //     color: Colors.grey.shade300,
-                //     width: 0,
-                //   ),
-                // ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(90.0)),
                   borderSide: BorderSide(
@@ -103,7 +95,7 @@ class country_TF extends StatelessWidget {
                   ),
                 ),
               ),
-              initialCountryCode: '', //default contry code, NP for Nepal
+              initialCountryCode: 'PK', //default contry code, NP for Nepal
               onChanged: (phone) {
                 //when phone number country code is changed
                 print(phone.completeNumber); //get complete number
