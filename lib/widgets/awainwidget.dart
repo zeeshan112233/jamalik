@@ -10,7 +10,10 @@ class Gakhar extends StatelessWidget {
           children: [
             new Text(
               "Welcome to GAKHAR",
-              style: new TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+              style: new TextStyle(
+                fontSize: 50,
+                fontWeight: FontWeight.w900,
+                ),
             ),
           ],
         ));
