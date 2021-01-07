@@ -23,20 +23,24 @@ class AR extends StatelessWidget {
               ),
               CreateAccount(),
               SizedBox(
-                height: 30.0,
+                height: 10.0,
               ),
               //Sign in Button
               SignIn(),
               SizedBox(
-                height: 20.0,
+                height: 5.0,
               ),
               PincodeField(),
               SizedBox(
-                height: 40.0,
+                height: 5.0,
               ),
-              MyCard(),
+              PayViaCreditCard(),
               SizedBox(
-                height: 20.0,
+                height: 5.0,
+              ),
+              PayViaDebitCard(),
+              SizedBox(
+                height: 10.0,
               ),
               //Schedule Button
               Expanded(
