@@ -6,6 +6,7 @@ import 'package:jamalik/widgets/companycard.dart';
 import 'package:jamalik/widgets/dotcard.dart';
 import 'package:jamalik/widgets/header_pink.dart';
 import 'package:jamalik/widgets/header_white.dart';
+import 'package:jamalik/widgets/NavDrawer.dart';
 
 //New Class
 class Gakhar extends StatefulWidget {
@@ -26,6 +27,10 @@ class _GakharState extends State<Gakhar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavDrawer(
+        dp: "images/logo.png",
+        name: "Ifraham :p",
+      ),
       appBar: AppBar(
         title: Text("Gakhar"),
       ),

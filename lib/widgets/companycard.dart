@@ -115,17 +115,23 @@ class companycard extends StatelessWidget {
         ),
       ),
       Positioned(
-        left: 320,
+        right: 20,
         top: 35,
         child: new Container(
           margin: EdgeInsets.all(10.0),
           child: new Row(children: [
-            new Image.asset(
-              heartimage,
+            GestureDetector(
+              onTap: () => print("heart tapped"),
+              child: new Image.asset(
+                heartimage,
+              ),
             ),
             SizedBox(width: 10),
-            new Image.asset(
-              shareimage,
+            GestureDetector(
+              onTap: () => print("share tapped"),
+              child: new Image.asset(
+                shareimage,
+              ),
             ),
           ]),
         ),
