@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/Otpauthentication.dart';
+import 'package:jamalik/Ui/Passwordrecovery.dart';
 import 'package:jamalik/Ui/login.dart';
 import './Ui/welcome_home.dart';
 
@@ -22,7 +24,7 @@ class SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => login(),
+            builder: (context) => Passwordrecovery(),
           ));
     });
   }
