@@ -6,7 +6,7 @@ import './Ui/welcome_home.dart';
 
 void main() => runApp(new MaterialApp(
       title: "Welcome",
-      home: new SplashScreen(), //welcome class define in ui folder
+      home: new Passwordrecovery(), //welcome class define in ui folder
     ));
 
 class SplashScreen extends StatefulWidget {

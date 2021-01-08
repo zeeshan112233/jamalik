@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   intl_phone_field: ^1.2.0
+  touchable_opacity: 1.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
