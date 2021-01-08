@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Buttons.dart';
+import 'package:jamalik/Ui/Otpauthentication.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 
@@ -138,11 +140,23 @@ class _loginState extends State<login> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.04,
                         ),
-                        SignIn(),
+                        PinkButtons(
+                          Buttontext: "Sign In",
+                          onpress: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Otpauthentication()),
+                            )
+                          },
+                        ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
-                        CreateAccount(),
+                        WhiteButtons(
+                          Buttontext: "Create Account",
+                          onpress: () => {print("hi")},
+                        ),
                       ],
                     ),
                   ),

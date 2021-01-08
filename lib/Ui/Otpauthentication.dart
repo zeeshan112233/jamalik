@@ -3,6 +3,9 @@ import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
+import '../Buttons.dart';
+import 'Passwordrecovery.dart';
+
 //New Class
 class Otpauthentication extends StatefulWidget {
   @override
@@ -49,32 +52,83 @@ class OtpauthenticationState extends State<Otpauthentication> {
                   ),
                   child: Column(
                     children: [
-                      Text("OTP Authentication "),
-                      Text("An authentication code has been sent to"),
-                      Text(phoneno),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.10,
+                      ),
+                      Text("OTP Authentication ",
+                          style: TextStyle(fontSize: 24)),
+                      SizedBox(height: 5),
+                      Text(
+                        "An authentication code has been sent to",
+                        style: TextStyle(
+                          color: Color(0xff989BAD),
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        phoneno,
+                        style: TextStyle(
+                          color: Color(0xff989BAD),
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.06,
+                      ),
                       PinCodeTextField(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(" i didn't receive any code."),
+                          Text(" I didn't recieve code ! "),
                           GestureDetector(
                             child: Text(
-                              "Resend code!",
-                              style: TextStyle(color: Colors.purple.shade800),
+                              "Resend!",
+                              style: TextStyle(
+                                color: Color(0xffA63786),
+                              ),
                             ),
-                            onTap: () => print("Resend Code"),
+                            onTap: () => print("Forgot touched"),
                           ),
                         ],
                       ),
-                      SignIn(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.13,
+                      ),
+                      PinkButtons(
+                        Buttontext: "NEXT",
+                        onpress: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Passwordrecovery()),
+                          )
+                        },
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(" By signing up, you agree to our."),
-                          GestureDetector(
-                            child: Text(
-                              "Term and Conditions",
-                              style: TextStyle(color: Colors.purple.shade800),
-                            ),
-                            onTap: () => print("Term and Conditions Tapped"),
+                          Column(
+                            children: [
+                              Text(" By signing up you agree to our. "),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.012,
+                              ),
+                              GestureDetector(
+                                child: Text(
+                                  "Terms and Conditions!",
+                                  style: TextStyle(
+                                    color: Color(0xffA63786),
+                                  ),
+                                ),
+                                onTap: () => print("Forgot touched"),
+                              ),
+                            ],
                           ),
                         ],
                       ),

@@ -78,34 +78,37 @@ class country_TF extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
           color: Colors.grey.shade300,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Phone Number"),
-            IntlPhoneField(
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(90.0)),
-                  borderSide: BorderSide(
-                    color: Colors.grey.shade300,
-                    width: 1.0,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Phone Number"),
+              IntlPhoneField(
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                    borderSide: BorderSide(
+                      color: Colors.grey.shade300,
+                      width: 1.0,
+                    ),
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 1.0,
+                    ),
                   ),
                 ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 1.0,
-                  ),
-                ),
+                initialCountryCode: 'PK', //default contry code, NP for Nepal
+                onChanged: (phone) {
+                  //when phone number country code is changed
+                  print(phone.completeNumber); //get complete number
+                  print(phone.countryCode); // get country code only
+                  print(phone.number); // only phone number
+                },
               ),
-              initialCountryCode: 'PK', //default contry code, NP for Nepal
-              onChanged: (phone) {
-                //when phone number country code is changed
-                print(phone.completeNumber); //get complete number
-                print(phone.countryCode); // get country code only
-                print(phone.number); // only phone number
-              },
-            ),
-          ],
+            ],
+          ),
         ));
   }
 }

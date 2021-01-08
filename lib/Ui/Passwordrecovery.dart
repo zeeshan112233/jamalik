@@ -50,9 +50,31 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                   ),
                   child: Column(
                     children: [
-                      Text("Password Recovery "),
-                      Text("Enter your Phone number to recover your password"),
-                      country_TF(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.10,
+                      ),
+                      Text("Password Recovery ",
+                          style: TextStyle(fontSize: 24)),
+                      SizedBox(height: 5),
+                      Text(
+                        "Enter your Phone number to recover your password",
+                        style: TextStyle(
+                          color: Color(0xff989BAD),
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.09,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal:
+                                MediaQuery.of(context).size.height * 0.04),
+                        child: country_TF(),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.20,
+                      ),
                       PinkButtons(
                         Buttontext: "SEND CODE",
                         TextColor: Colors.white,
