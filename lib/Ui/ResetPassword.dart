@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/Buttons.dart';
-import 'package:jamalik/Ui/Verifyidentity.dart';
-import 'package:jamalik/widgets/ButtonsWidget.dart';
 import 'package:jamalik/widgets/TF.dart';
-import 'package:pin_code_text_field/pin_code_text_field.dart';
-import './constants/colors.dart';
+import 'package:jamalik/widgets/ButtonsWidget.dart';
 
 //New Class
-class Passwordrecovery extends StatefulWidget {
+class ResetPassword extends StatefulWidget {
   @override
-  PasswordrecoveryState createState() => PasswordrecoveryState();
+  ResetPasswordState createState() => ResetPasswordState();
 }
 
-class PasswordrecoveryState extends State<Passwordrecovery> {
+class ResetPasswordState extends State<ResetPassword> {
+  bool passwordvalid = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,19 +48,59 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                   ),
                   child: Column(
                     children: [
-                      Text("Password Recovery "),
-                      Text("Enter your Phone number to recover your password"),
-                      country_TF(),
+                      Text("Reset your Password"),
+                      Text(
+                          "Atleast 8 characters, with uppercase and lowercase"),
+                      Text("letters"),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("New Password"),
+                            TF(
+                              controller: null,
+                              hintText: '(+974) 55 555 555',
+                              // isPassword: true,
+                              prefixIcon: Icons.lock,
+                              suffixIcon: passwordvalid ? Icons.person : null,
+                              tfColor: Colors.grey.shade300,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Password"),
+                            TF(
+                              controller: null,
+                              hintText: '**********',
+                              // isPassword: true,
+                              prefixIcon: Icons.lock,
+                              suffixIcon: passwordvalid ? Icons.person : null,
+                              tfColor: Colors.grey.shade300,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text(" Forgot"),
+                          GestureDetector(
+                            child: Text(
+                              "Password!",
+                              style: TextStyle(color: Colors.blue.shade800),
+                            ),
+                            onTap: () => print("Forgot touched"),
+                          ),
+                        ],
+                      ),
                       PinkButtons(
-                        Buttontext: "SEND CODE",
                         TextColor: Colors.white,
-                        onpress: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Verifyidentity()),
-                          );
-                        },
+                        Buttontext: "SIGN IN",
                       ),
                     ],
                   ),

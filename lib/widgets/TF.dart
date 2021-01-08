@@ -75,11 +75,13 @@ class country_TF extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(90.0)),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
           color: Colors.grey.shade300,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text("Phone Number"),
             IntlPhoneField(
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(

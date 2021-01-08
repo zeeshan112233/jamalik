@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/Buttons.dart';
-import 'package:jamalik/Ui/Verifyidentity.dart';
-import 'package:jamalik/widgets/ButtonsWidget.dart';
+import 'package:jamalik/Ui/ResetPassword.dart';
 import 'package:jamalik/widgets/TF.dart';
+import 'package:jamalik/widgets/ButtonsWidget.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
-import './constants/colors.dart';
 
 //New Class
-class Passwordrecovery extends StatefulWidget {
+class Verifyidentity extends StatefulWidget {
   @override
-  PasswordrecoveryState createState() => PasswordrecoveryState();
+  VerifyidentityState createState() => VerifyidentityState();
 }
 
-class PasswordrecoveryState extends State<Passwordrecovery> {
+class VerifyidentityState extends State<Verifyidentity> {
+  String phoneno = "+974 555 555 555 ";
+  bool passwordvalid = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,19 +51,42 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                   ),
                   child: Column(
                     children: [
-                      Text("Password Recovery "),
-                      Text("Enter your Phone number to recover your password"),
-                      country_TF(),
+                      Text("Verify your identity "),
+                      Text("We have sent you  code to $phoneno "),
+                      PinCodeTextField(),
+                      Row(
+                        children: [
+                          Text(" i didn't receive any code."),
+                          GestureDetector(
+                            child: Text(
+                              "Resend code!",
+                              style: TextStyle(color: Colors.purple.shade800),
+                            ),
+                            onTap: () => print("Resend Code"),
+                          ),
+                        ],
+                      ),
                       PinkButtons(
-                        Buttontext: "SEND CODE",
-                        TextColor: Colors.white,
+                        Buttontext: "Next",
                         onpress: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Verifyidentity()),
+                                builder: (context) => ResetPassword()),
                           );
                         },
+                      ),
+                      Row(
+                        children: [
+                          Text(" By signing up, you agree to our."),
+                          GestureDetector(
+                            child: Text(
+                              "Term and Conditions",
+                              style: TextStyle(color: Colors.purple.shade800),
+                            ),
+                            onTap: () => print("Term and Conditions Tapped"),
+                          ),
+                        ],
                       ),
                     ],
                   ),
