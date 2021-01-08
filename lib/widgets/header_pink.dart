@@ -12,7 +12,6 @@ class header_pink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 15, top: 30, right: 15, bottom: 0),
       decoration: BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topRight,
@@ -25,25 +24,29 @@ class header_pink extends StatelessWidget {
             bottomRight: Radius.circular(20)),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           GestureDetector(
             onTap: () => print("Back tapped"),
             child: new Image.asset(
               Back,
-              width: 90.0,
-              height: 90.0,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 135.0),
+            padding: const EdgeInsets.only(right: 110.0),
             child: Text(
               text,
-              style: TextStyle(fontSize: 30, color: Colors.white),
+              style: TextStyle(
+                fontFamily: "DM Sans",
+                color: Colors.white,
+                fontSize: 14.0,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ],
       ),
+      height: MediaQuery.of(context).size.height * 0.14,
     );
   }
 }

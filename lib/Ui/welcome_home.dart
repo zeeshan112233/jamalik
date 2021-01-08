@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/Ui/AR.dart';
 import 'package:jamalik/Ui/Gakhar.dart';
+import 'package:jamalik/Ui/MyServices1.dart';
+import 'package:jamalik/Ui/Payment.dart';
 
 //New Class
 class Welcome extends StatelessWidget {
@@ -12,7 +14,10 @@ class Welcome extends StatelessWidget {
         children: [
           new Text(
             "Welcome to dsssdsd",
-            style: new TextStyle(fontSize: 50, fontWeight: FontWeight.w900),
+            style: new TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.w900,
+            ),
           ),
           new RaisedButton(
             key: null,
@@ -40,7 +45,7 @@ class Welcome extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AR(),
+                  builder: (context) => Payment(),
                 ),
               );
             },

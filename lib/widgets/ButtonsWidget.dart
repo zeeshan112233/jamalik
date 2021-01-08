@@ -57,3 +57,97 @@ class SignIn extends StatelessWidget {
     );
   }
 }
+
+class Schedule extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Expanded(
+        child: FlatButton(
+          color: Colors.grey[200],
+          textColor: Colors.black87,
+          onPressed: () {},
+          child: Container(
+            width: 380,
+            height: 215,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Colors.purple[500],
+                  Colors.amber[500],
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                "Schedule",
+                style: TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyAppointments extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: FlatButton(
+        textColor: Colors.black87,
+        padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 16),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+              color: const Color(0xff982877),
+              width: 1,
+              style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(50.0),
+        ),
+        onPressed: () {},
+        child: Text(
+          "My Appointments",
+          style: TextStyle(
+            color: const Color(0xff982877),
+            fontFamily: "DM Sans",
+            fontSize: 14.0,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CompletedServices extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: FlatButton(
+        padding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 16),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+              color: const Color(0xff982877),
+              width: 1,
+              style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(50.0),
+        ),
+        onPressed: () {},
+        child: Text(
+          "Completed Services",
+          style: TextStyle(
+            color: const Color(0xff982877),
+            fontFamily: "DM Sans",
+            fontSize: 14.0,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+    );
+  }
+}
