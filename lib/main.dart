@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/GettingStarted.dart';
 import 'package:jamalik/Ui/Otpauthentication.dart';
 import 'package:jamalik/Ui/Passwordrecovery.dart';
 import 'package:jamalik/Ui/login.dart';
