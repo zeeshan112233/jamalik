@@ -38,14 +38,14 @@ class TF extends StatelessWidget {
           filled: true,
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.grey,
+              color: Colors.grey.shade300,
               width: 0.5,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(90.0)),
             borderSide: BorderSide(
-              color: Colors.grey,
+              color: Colors.grey.shade300,
               width: 1.0,
             ),
           ),
@@ -58,7 +58,7 @@ class TF extends StatelessWidget {
           hintText: null == hintText ? '' : hintText,
           helperText: null == helpText ? '' : helpText,
           prefixIcon: null == prefixIcon ? null : Icon(prefixIcon),
-          suffix: null == suffixIcon ? null : Icon(suffixIcon),
+          suffixIcon: null == suffixIcon ? null : Icon(suffixIcon),
           enabled: null == enabled ? true : false,
         ),
       ),
