@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 import 'package:jamalik/widgets/PincodeField.dart';
-import 'package:jamalik/widgets/Card.dart';
+import 'package:jamalik/widgets/Serviceswidget.dart';
+import 'package:jamalik/widgets/Paradisebeautysalonwidget.dart';
+
 //New Class
 class AR extends StatelessWidget {
   @override
@@ -34,44 +36,13 @@ class AR extends StatelessWidget {
               SizedBox(
                 height: 5.0,
               ),
-              PayViaCreditCard(),
+              Services(),
+
               SizedBox(
-                height: 5.0,
-              ),
-              PayViaDebitCard(),
-              SizedBox(
-                height: 10.0,
+                height: 80.0,
               ),
               //Schedule Button
-              Expanded(
-                child: FlatButton(
-                  color: Colors.grey[200],
-                  textColor: Colors.black87,
-                  onPressed: () {},
-                  child: Container(
-                    width: 380,
-                    height: 215,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Colors.purple[500],
-                          Colors.amber[500],
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Schedule",
-                        style: TextStyle(
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              Schedule(),
             ],
           ),
         ),
