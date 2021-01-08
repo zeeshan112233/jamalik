@@ -73,16 +73,52 @@ class Schedule extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.purple[500],
-                  Colors.amber[500],
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+                Colors.purple.shade500,
+                Colors.pink.shade200,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               ),
             ),
             child: Center(
               child: Text(
                 "Schedule",
+                style: TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+class BookNow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Expanded(
+        child: FlatButton(
+          color: Colors.grey[200],
+          textColor: Colors.black87,
+          onPressed: () {},
+          child: Container(
+            width: 380,
+            height: 215,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                Colors.purple.shade500,
+                Colors.pink.shade200,
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                "Book Now",
                 style: TextStyle(
                   fontSize: 16.0,
                 ),
