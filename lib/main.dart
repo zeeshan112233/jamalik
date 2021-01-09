@@ -3,13 +3,16 @@ import 'package:jamalik/Ui/Gakhar.dart';
 import 'package:jamalik/Ui/GettingStarted.dart';
 import 'package:jamalik/Ui/Otpauthentication.dart';
 import 'package:jamalik/Ui/Passwordrecovery.dart';
+import 'package:jamalik/Ui/aboutapp.dart';
 import 'package:jamalik/Ui/home_2.dart';
 import 'package:jamalik/Ui/login.dart';
+import 'package:jamalik/Ui/notification.dart';
+import 'package:jamalik/Ui/ParadiseBeautySalon.dart';
 import './Ui/welcome_home.dart';
 
 void main() => runApp(new MaterialApp(
       title: "Welcome",
-      home: new Passwordrecovery(), //welcome class define in ui folder
+      home: new ParadiseBeautySalon(),//Passwordrecovery(), //welcome class define in ui folder
     ));
 
 class SplashScreen extends StatefulWidget {
