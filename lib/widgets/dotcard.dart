@@ -40,7 +40,7 @@ class dotcard extends StatelessWidget {
               children: [
                 Text(
                   text,
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(fontSize: 20),
                 ),
                 new Image.asset(
                   customimage,

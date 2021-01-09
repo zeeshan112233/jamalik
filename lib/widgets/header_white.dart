@@ -12,7 +12,8 @@ class header_white extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 25, top: 30, right: 25, bottom: 0),
+      height: 60,
+      // margin: EdgeInsets.only(left: 25, top: 30, right: 25, bottom: 0),
       color: Colors.white,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -21,16 +22,14 @@ class header_white extends StatelessWidget {
             onTap: () => print("Prefix tapped"),
             child: new Image.asset(
               prefixIcon,
-              width: 90.0,
-              height: 90.0,
+              width: 40.0,
             ),
           ),
           GestureDetector(
             onTap: () => print("Suffix tapped"),
             child: new Image.asset(
               suffixIcon,
-              width: 90.0,
-              height: 90.0,
+              width: 40.0,
             ),
           ),
         ],
