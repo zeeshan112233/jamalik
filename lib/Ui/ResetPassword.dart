@@ -3,6 +3,8 @@ import 'package:jamalik/Buttons.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 
+import 'GettingStarted.dart';
+
 //New Class
 class ResetPassword extends StatefulWidget {
   @override
@@ -35,74 +37,124 @@ class ResetPasswordState extends State<ResetPassword> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(50.0),
-                      topRight: const Radius.circular(50.0),
-                      // bottomLeft: const Radius.circular(10.0),
-                      // bottomRight: const Radius.circular(10.0),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    children: [
-                      Text("Reset your Password"),
-                      Text(
-                          "Atleast 8 characters, with uppercase and lowercase"),
-                      Text("letters"),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("New Password"),
-                            TF(
-                              controller: null,
-                              hintText: '(+974) 55 555 555',
-                              // isPassword: true,
-                              prefixIcon: Icons.lock,
-                              suffixIcon: passwordvalid ? Icons.person : null,
-                              tfColor: Colors.grey.shade300,
-                            ),
-                          ],
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      // height: MediaQuery.of(context).size.height * 0.85,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.only(
+                          topLeft: const Radius.circular(50.0),
+                          topRight: const Radius.circular(50.0),
+                          // bottomLeft: const Radius.circular(10.0),
+                          // bottomRight: const Radius.circular(10.0),
                         ),
+                        color: Colors.white,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Password"),
-                            TF(
-                              controller: null,
-                              hintText: '**********',
-                              // isPassword: true,
-                              prefixIcon: Icons.lock,
-                              suffixIcon: passwordvalid ? Icons.person : null,
-                              tfColor: Colors.grey.shade300,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Row(
+                      child: Column(
                         children: [
-                          Text(" Forgot"),
-                          GestureDetector(
-                            child: Text(
-                              "Password!",
-                              style: TextStyle(color: Colors.blue.shade800),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.10,
+                          ),
+                          Text(
+                            "Reset your Password",
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "Atleast 8 characters, with uppercase and lowercase",
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
                             ),
-                            onTap: () => print("Forgot touched"),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "letters",
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.05,
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text("New Password"),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
+                                TF(
+                                  controller: null,
+                                  hintText: '**********',
+                                  // isPassword: true,
+                                  prefixIcon: Icons.lock,
+                                  suffixIcon:
+                                      passwordvalid ? Icons.person : null,
+                                  tfColor: Colors.grey.shade300,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 18.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text("Confirm Password"),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
+                                TF(
+                                  controller: null,
+                                  hintText: '**********',
+                                  // isPassword: true,
+                                  prefixIcon: Icons.lock,
+                                  suffixIcon:
+                                      passwordvalid ? Icons.person : null,
+                                  tfColor: Colors.grey.shade300,
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.05,
+                          ),
+                          PinkButtons(
+                            TextColor: Colors.white,
+                            Buttontext: "SIGN IN",
+                            onpress: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => GettingStarted()),
+                              )
+                            },
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.05,
                           ),
                         ],
                       ),
-                      PinkButtons(
-                        TextColor: Colors.white,
-                        Buttontext: "SIGN IN",
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

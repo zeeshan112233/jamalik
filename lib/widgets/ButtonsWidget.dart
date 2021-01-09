@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/MyServices1.dart';
 
 class CreateAccount extends StatelessWidget {
   @override
@@ -73,11 +74,11 @@ class Schedule extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                Colors.purple.shade500,
-                Colors.pink.shade200,
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+                  Colors.purple.shade500,
+                  Colors.pink.shade200,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
             child: Center(
@@ -94,6 +95,7 @@ class Schedule extends StatelessWidget {
     );
   }
 }
+
 class BookNow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -102,18 +104,23 @@ class BookNow extends StatelessWidget {
         child: FlatButton(
           color: Colors.grey[200],
           textColor: Colors.black87,
-          onPressed: () {},
+          onPressed: () => {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyServices1()),
+            )
+          },
           child: Container(
             width: 380,
             height: 215,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                Colors.purple.shade500,
-                Colors.pink.shade200,
-              ],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+                  Colors.purple.shade500,
+                  Colors.pink.shade200,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
             child: Center(

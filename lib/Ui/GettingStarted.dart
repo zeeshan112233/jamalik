@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/Buttons.dart';
+import 'package:jamalik/Ui/Payment.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 
@@ -10,7 +11,7 @@ class GettingStarted extends StatefulWidget {
 }
 
 class GettingStartedState extends State<GettingStarted> {
-  bool valid = true;
+  bool valid = false;
   int radioValue = 0;
   double _finalresult = 0.0;
   String _formattedtext = "";
@@ -63,7 +64,7 @@ class GettingStartedState extends State<GettingStarted> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.78,
+                  height: MediaQuery.of(context).size.height * 0.70,
                   child: SingleChildScrollView(
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -78,32 +79,80 @@ class GettingStartedState extends State<GettingStarted> {
                       ),
                       child: Column(
                         children: [
-                          Text("Getting Started"),
-                          Text("Create an Account to to continue!"),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.10,
+                          ),
+                          Text(
+                            "Getting Started",
+                            style: TextStyle(fontSize: 24),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.01,
+                          ),
+                          Text(
+                            "Create an Account to to continue!",
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.03,
+                          ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 18.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Full Name"),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text("Full Name"),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
                                 TF(
                                   controller: null,
                                   hintText: 'Aish',
                                   // isPassword: true,
-                                  prefixIcon: Icons.person,
+                                  prefixIcon: Icons.person_outline,
                                   suffixIcon: valid ? Icons.check_box : null,
                                   tfColor: Colors.grey.shade300,
                                 ),
-                                Text("Last Name"),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text("Last Name"),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
                                 TF(
                                   controller: null,
                                   hintText: '**********',
                                   // isPassword: true,
-                                  prefixIcon: Icons.lock,
+                                  prefixIcon: Icons.person_outline,
                                   suffixIcon: valid ? Icons.check_box : null,
                                   tfColor: Colors.grey.shade300,
                                 ),
-                                Text("Phone Number"),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text("Phone Number"),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
                                 TF(
                                   controller: null,
                                   hintText: '(+974) 555 555 555',
@@ -135,7 +184,17 @@ class GettingStartedState extends State<GettingStarted> {
                                     ),
                                   ],
                                 ),
-                                Text("Password"),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text(" Password"),
+                                ),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
                                 TF(
                                   controller: null,
                                   hintText: '**********',
@@ -144,16 +203,17 @@ class GettingStartedState extends State<GettingStarted> {
                                   suffixIcon: valid ? Icons.check_box : null,
                                   tfColor: Colors.grey.shade300,
                                 ),
-                                Text("Password"),
-                                TF(
-                                  controller: null,
-                                  hintText: '**********',
-                                  isPassword: true,
-                                  prefixIcon: Icons.phone_android,
-                                  suffixIcon: valid ? Icons.check_box : null,
-                                  tfColor: Colors.grey.shade300,
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: MediaQuery.of(context).size.width *
+                                        0.04,
+                                  ),
+                                  child: Text(" Confirm Password"),
                                 ),
-                                Text("Confirm Password"),
+                                SizedBox(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                ),
                                 TF(
                                   controller: null,
                                   hintText: '**********',
@@ -168,12 +228,22 @@ class GettingStartedState extends State<GettingStarted> {
                                         activeColor: Colors.pink.shade600,
                                         value: rememberMe,
                                         onChanged: _onRememberMeChanged),
-                                    Text("Agree with Our Privacy Policy & "),
+                                    Text(
+                                      "Agree with Our Privacy Policy & ",
+                                      style: TextStyle(
+                                        color: Color(0xff989BAD),
+                                      ),
+                                    ),
                                     GestureDetector(
                                         child: Text(
                                           "Terms & Condition",
                                           style: TextStyle(
-                                              color: Colors.pink.shade600),
+                                            color: Colors.pink.shade600,
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.03,
+                                          ),
                                         ),
                                         onTap: () =>
                                             print("Terms and Condition")),
@@ -181,6 +251,9 @@ class GettingStartedState extends State<GettingStarted> {
                                 ),
                               ],
                             ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -197,9 +270,22 @@ class GettingStartedState extends State<GettingStarted> {
                               ),
                             ],
                           ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
                           PinkButtons(
                             TextColor: Colors.white,
-                            Buttontext: "SIGN IN",
+                            Buttontext: "SIGN UP",
+                            onpress: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Payment()),
+                              )
+                            },
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.07,
                           ),
                         ],
                       ),

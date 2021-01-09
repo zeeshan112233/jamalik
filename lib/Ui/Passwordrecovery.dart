@@ -37,56 +37,63 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(50.0),
-                      topRight: const Radius.circular(50.0),
-                      // bottomLeft: const Radius.circular(10.0),
-                      // bottomRight: const Radius.circular(10.0),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.10,
-                      ),
-                      Text("Password Recovery ",
-                          style: TextStyle(fontSize: 24)),
-                      SizedBox(height: 5),
-                      Text(
-                        "Enter your Phone number to recover your password",
-                        style: TextStyle(
-                          color: Color(0xff989BAD),
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.only(
+                          topLeft: const Radius.circular(50.0),
+                          topRight: const Radius.circular(50.0),
+                          // bottomLeft: const Radius.circular(10.0),
+                          // bottomRight: const Radius.circular(10.0),
                         ),
+                        color: Colors.white,
                       ),
-                      SizedBox(height: 5),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.09,
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.10,
+                          ),
+                          Text("Password Recovery ",
+                              style: TextStyle(fontSize: 24)),
+                          SizedBox(height: 5),
+                          Text(
+                            "Enter your Phone number to recover your password",
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.09,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal:
+                                    MediaQuery.of(context).size.height * 0.04),
+                            child: country_TF(),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.2,
+                          ),
+                          PinkButtons(
+                            Buttontext: "SEND CODE",
+                            TextColor: Colors.white,
+                            onpress: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Verifyidentity()),
+                              );
+                            },
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.1,
+                          ),
+                        ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal:
-                                MediaQuery.of(context).size.height * 0.04),
-                        child: country_TF(),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.20,
-                      ),
-                      PinkButtons(
-                        Buttontext: "SEND CODE",
-                        TextColor: Colors.white,
-                        onpress: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Verifyidentity()),
-                          );
-                        },
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

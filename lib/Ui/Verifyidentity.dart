@@ -38,89 +38,54 @@ class VerifyidentityState extends State<Verifyidentity> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(50.0),
-                      topRight: const Radius.circular(50.0),
-                      // bottomLeft: const Radius.circular(10.0),
-                      // bottomRight: const Radius.circular(10.0),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.10,
-                      ),
-                      Text("Verify your Identity ",
-                          style: TextStyle(fontSize: 24)),
-                      SizedBox(height: 5),
-                      Text(
-                        "An authentication code has been sent to",
-                        style: TextStyle(
-                          color: Color(0xff989BAD),
+                  height: MediaQuery.of(context).size.height * 0.7,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.only(
+                          topLeft: const Radius.circular(50.0),
+                          topRight: const Radius.circular(50.0),
+                          // bottomLeft: const Radius.circular(10.0),
+                          // bottomRight: const Radius.circular(10.0),
                         ),
+                        color: Colors.white,
                       ),
-                      SizedBox(height: 5),
-                      Text(
-                        phoneno,
-                        style: TextStyle(
-                          color: Color(0xff989BAD),
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.06,
-                      ),
-                      PinCodeTextField(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Column(
                         children: [
-                          Text(" I didn't recieve code ! "),
-                          GestureDetector(
-                            child: Text(
-                              "Resend!",
-                              style: TextStyle(
-                                color: Color(0xffA63786),
-                              ),
-                            ),
-                            onTap: () => print("Forgot touched"),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.10,
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.13,
-                      ),
-                      PinkButtons(
-                        Buttontext: "NEXT",
-                        onpress: () => {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ResetPassword()),
-                          )
-                        },
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
+                          Text("Verify your Identity ",
+                              style: TextStyle(fontSize: 24)),
+                          SizedBox(height: 5),
+                          Text(
+                            "An authentication code has been sent to",
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            phoneno,
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.06,
+                          ),
+                          PinCodeTextField(),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(" By signing up you agree to our. "),
-                              SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.012,
-                              ),
+                              Text(" I didn't recieve code ! "),
                               GestureDetector(
                                 child: Text(
-                                  "Terms and Conditions!",
+                                  "Resend!",
                                   style: TextStyle(
                                     color: Color(0xffA63786),
                                   ),
@@ -129,9 +94,48 @@ class VerifyidentityState extends State<Verifyidentity> {
                               ),
                             ],
                           ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.13,
+                          ),
+                          PinkButtons(
+                            Buttontext: "NEXT",
+                            onpress: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResetPassword()),
+                              )
+                            },
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(" By signing up you agree to our. "),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.012,
+                                  ),
+                                  GestureDetector(
+                                    child: Text(
+                                      "Terms and Conditions!",
+                                      style: TextStyle(
+                                        color: Color(0xffA63786),
+                                      ),
+                                    ),
+                                    onTap: () => print("Forgot touched"),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
