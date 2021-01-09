@@ -74,6 +74,19 @@ flutter:
     - images/fathima.png
     - images/splashscreen.png
     - images/signinlogo.png
+    - images/home_2pic.png
+    - images/cosmetology.png
+    - images/bodycare.png
+    - images/makeup.png
+    - images/nailpolish.png
+    - images/spaprocedure.png
+    - images/tanningstudios.png
+    - images/beautybtnpink.png
+    - images/beautybtnwhite.png
+    - images/healthbtnpink.png
+    - images/healthbtnwhite.png
+    - images/otherbtnwhite.png
+    - images/locationpin.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
