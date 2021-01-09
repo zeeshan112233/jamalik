@@ -98,11 +98,11 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                 ),
               ),
               Positioned(
-                top: 100,
-                left: 150,
+                top: MediaQuery.of(context).size.height * 0.12,
+                left: MediaQuery.of(context).size.width * 0.4,
                 child: Container(
-                  height: 120,
-                  width: 120,
+                  height: 100,
+                  width: 100,
                   decoration: BoxDecoration(
                     borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(90.0),
@@ -112,7 +112,7 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                     ),
                     color: Colors.white,
                   ),
-                  child: Image.asset('images/NAPS.png'),
+                  child: Image.asset('images/Passwordimage.png'),
                 ),
               ),
               Positioned(

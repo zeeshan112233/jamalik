@@ -11,6 +11,7 @@ class companycard extends StatelessWidget {
     this.companyname,
     this.starimage,
     this.ratings,
+    this.mainimage,
   });
 
   final String mainbackgroungimage;
@@ -22,14 +23,14 @@ class companycard extends StatelessWidget {
   final String companyname;
   final String starimage;
   final String ratings;
+  final String mainimage;
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
-        height: 200,
-        width: 400,
-        margin: EdgeInsets.only(left: 15, top: 30, right: 15, bottom: 0),
+        height: MediaQuery.of(context).size.height * 0.25,
+        width: MediaQuery.of(context).size.width * 0.92,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,
@@ -42,7 +43,7 @@ class companycard extends StatelessWidget {
               bottomRight: Radius.circular(20)),
         ),
         child: Image.asset(
-          "images/paradise.png",
+          mainimage,
         ),
       ),
       Positioned(
@@ -102,7 +103,7 @@ class companycard extends StatelessWidget {
             ),
 
             //space between button and rating
-            SizedBox(width: 110),
+            SizedBox(width: 90),
             RaisedButton(
               onPressed: () => print("hey "),
               shape: new RoundedRectangleBorder(
