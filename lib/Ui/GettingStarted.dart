@@ -235,6 +235,9 @@ class GettingStartedState extends State<GettingStarted> {
                                     "Agree with Our Privacy Policy & ",
                                     style: TextStyle(
                                       color: Color(0xff989BAD),
+                                      fontSize:
+                                          MediaQuery.of(context).size.width *
+                                              0.03,
                                     ),
                                   ),
                                   GestureDetector(
