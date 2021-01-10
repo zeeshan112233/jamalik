@@ -16,6 +16,7 @@ import 'package:jamalik/Ui/home_2.dart';
 import 'package:jamalik/Ui/login.dart';
 import 'package:jamalik/widgets/Serviceswidget.dart';
 import './Ui/welcome_home.dart';
+import 'package:jamalik/Ui/Checkout.dart';
 
 void main() => runApp(new MaterialApp(
       title: "Welcome",
