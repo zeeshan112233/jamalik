@@ -16,10 +16,11 @@ import 'package:jamalik/Ui/home_2.dart';
 import 'package:jamalik/Ui/login.dart';
 import 'package:jamalik/widgets/Serviceswidget.dart';
 import './Ui/welcome_home.dart';
+import 'package:jamalik/Ui/Checkout.dart';
 
 void main() => runApp(new MaterialApp(
       title: "Welcome",
-      home: new Passwordrecovery(), //welcome class define in ui folder
+      home: new SplashScreen(), //welcome class define in ui folder
     ));
 
 class SplashScreen extends StatefulWidget {
@@ -33,11 +34,11 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 7), () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Passwordrecovery(),
+            builder: (context) => GettingStarted(),
           ));
     });
   }
