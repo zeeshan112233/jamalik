@@ -43,18 +43,21 @@ class GettingStartedState extends State<GettingStarted> {
 
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Material(
         child: Stack(
           children: [
             Container(
-              // height: 200,
-              // width: 300,
+              height: screenheight,
+              width: screenwidth,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.purple[500],
-                    Colors.amber[500],
+                    Colors.purple[600],
+                    Colors.pink[200],
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -64,10 +67,11 @@ class GettingStartedState extends State<GettingStarted> {
             Positioned(
               top: 170,
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.79,
+                height: screenheight - 170,
+                width: screenwidth,
+                color: Colors.white,
                 child: SingleChildScrollView(
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       borderRadius: new BorderRadius.only(
                         topLeft: const Radius.circular(50.0),
@@ -291,7 +295,7 @@ class GettingStartedState extends State<GettingStarted> {
               ),
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height * 0.12,
+              top: 110,
               left: MediaQuery.of(context).size.width * 0.4,
               child: Container(
                 height: 100,
