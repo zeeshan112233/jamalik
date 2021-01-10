@@ -141,7 +141,8 @@ class _loginState extends State<login> {
                           height: MediaQuery.of(context).size.height * 0.04,
                         ),
                         PinkButtons(
-                          Buttontext: "Sign In",
+                          Buttontext: "SIGN IN",
+                          TextColor: Colors.white,
                           onpress: () => {
                             Navigator.push(
                               context,

@@ -29,7 +29,7 @@ class companycard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
-        height: MediaQuery.of(context).size.height * 0.25,
+        height: MediaQuery.of(context).size.height * 0.27,
         width: MediaQuery.of(context).size.width * 0.92,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -47,7 +47,7 @@ class companycard extends StatelessWidget {
         ),
       ),
       Positioned(
-        top: 50,
+        top: 40,
         left: 20,
         child: new Container(
             margin: EdgeInsets.all(10.0),
@@ -103,7 +103,9 @@ class companycard extends StatelessWidget {
             ),
 
             //space between button and rating
-            SizedBox(width: 90),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.10,
+            ),
             RaisedButton(
               onPressed: () => print("hey "),
               shape: new RoundedRectangleBorder(

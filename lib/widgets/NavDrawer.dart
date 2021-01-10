@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/Favourites.dart';
+import 'package:jamalik/Ui/MyServices1.dart';
 import 'package:jamalik/Ui/aboutapp.dart';
 import 'package:jamalik/Ui/coupen.dart';
 import 'package:jamalik/Ui/customersupport.dart';
@@ -50,38 +52,63 @@ class NavDrawer extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
-                  children: [Image.asset(dp)],
-                ),
-                SizedBox(height: 50.0),
-                ListTile(
-                  title: Text(
-                    'hey $name',
-                    style: TextStyle(color: Colors.white, fontSize: 30),
-                  ),
-                  onTap: () => {},
-                ),
-                ListTile(
-                  title: Text(
-                    'Welcome to jamalik',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () => {Navigator.of(context).pop()},
-                ),
-                ListTile(
-                  title: Text(
-                    'Dashboard',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  onTap: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => dashboard(),
+                Image.asset(dp),
+                SizedBox(height: 40.0),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Hey, $name',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(right: 28.0, top: 6),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Welcome to jamalik',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  Text(
+                                    'Edit Profile',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    )
-                  },
+                    ],
+                  ),
                 ),
+                // ListTile(
+                //   title: Text(
+                //     'Dashboard',
+                //     style: TextStyle(color: Colors.white, fontSize: 20),
+                //   ),
+                //   onTap: () => {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => dashboard(),
+                //       ),
+                //     )
+                //   },
+                // ),
+
+                SizedBox(height: 20.0),
                 ListTile(
                   title: Text(
                     'My Services',
@@ -91,7 +118,7 @@ class NavDrawer extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => myservice(),
+                        builder: (context) => MyServices1(),
                       ),
                     )
                   },
@@ -119,7 +146,7 @@ class NavDrawer extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => favourite(),
+                        builder: (context) => Favourite(),
                       ),
                     )
                   },

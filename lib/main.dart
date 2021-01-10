@@ -19,7 +19,7 @@ import './Ui/welcome_home.dart';
 
 void main() => runApp(new MaterialApp(
       title: "Welcome",
-      home: new Passwordrecovery(), //welcome class define in ui folder
+      home: new SplashScreen(), //welcome class define in ui folder
     ));
 
 class SplashScreen extends StatefulWidget {
@@ -33,11 +33,11 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 7), () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Passwordrecovery(),
+            builder: (context) => GettingStarted(),
           ));
     });
   }

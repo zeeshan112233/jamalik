@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/Buttons.dart';
+import 'package:jamalik/Ui/home_2.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 
@@ -37,7 +38,7 @@ class ResetPasswordState extends State<ResetPassword> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.78,
                   child: SingleChildScrollView(
                     child: Container(
                       // height: MediaQuery.of(context).size.height * 0.85,
@@ -145,12 +146,12 @@ class ResetPasswordState extends State<ResetPassword> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => GettingStarted()),
+                                    builder: (context) => home_2()),
                               )
                             },
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.05,
+                            height: MediaQuery.of(context).size.height * 0.3,
                           ),
                         ],
                       ),
@@ -159,17 +160,14 @@ class ResetPasswordState extends State<ResetPassword> {
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.12,
+                top: MediaQuery.of(context).size.height * 0.136,
                 left: MediaQuery.of(context).size.width * 0.4,
                 child: Container(
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(90.0),
-                      topRight: const Radius.circular(90.0),
-                      bottomLeft: const Radius.circular(90.0),
-                      bottomRight: const Radius.circular(90.0),
+                    borderRadius: new BorderRadius.all(
+                      Radius.circular(90.0),
                     ),
                     color: Colors.white,
                   ),

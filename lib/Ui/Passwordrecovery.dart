@@ -37,7 +37,7 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height,
                   child: SingleChildScrollView(
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -89,7 +89,7 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                             },
                           ),
                           SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.1,
+                            height: MediaQuery.of(context).size.height * 0.5,
                           ),
                         ],
                       ),
@@ -98,7 +98,7 @@ class PasswordrecoveryState extends State<Passwordrecovery> {
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.12,
+                top: MediaQuery.of(context).size.height * 0.13,
                 left: MediaQuery.of(context).size.width * 0.4,
                 child: Container(
                   height: 100,

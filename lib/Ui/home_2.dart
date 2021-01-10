@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/Ui/AR.dart';
+import 'package:jamalik/Ui/notification.dart';
 import 'package:jamalik/widgets/dotcard.dart';
 import 'package:jamalik/widgets/header_white.dart';
 import 'package:jamalik/widgets/TF.dart';
@@ -24,7 +25,7 @@ class _State extends State<home_2> {
         child: Scaffold(
           drawer: NavDrawer(
             dp: "images/logo.png",
-            name: "Ifraham :p",
+            name: "Jamalik",
           ),
           appBar: AppBar(
               leading: Builder(
@@ -44,7 +45,9 @@ class _State extends State<home_2> {
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => AR()));
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => notification()));
                   },
                   child: IconButton(
                     icon: new Image.asset('images/suffix.png'),

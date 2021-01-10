@@ -38,7 +38,7 @@ class VerifyidentityState extends State<Verifyidentity> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.8,
                   child: SingleChildScrollView(
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -99,6 +99,7 @@ class VerifyidentityState extends State<Verifyidentity> {
                           ),
                           PinkButtons(
                             Buttontext: "NEXT",
+                            TextColor: Colors.white,
                             onpress: () => {
                               Navigator.push(
                                 context,
@@ -129,6 +130,10 @@ class VerifyidentityState extends State<Verifyidentity> {
                                     ),
                                     onTap: () => print("Forgot touched"),
                                   ),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.2,
+                                  ),
                                 ],
                               ),
                             ],
@@ -140,8 +145,8 @@ class VerifyidentityState extends State<Verifyidentity> {
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.12,
-                left: MediaQuery.of(context).size.width * 0.4,
+                top: MediaQuery.of(context).size.height * 0.14,
+                left: MediaQuery.of(context).size.width * 0.36,
                 child: Container(
                   height: 100,
                   width: 100,

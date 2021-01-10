@@ -10,7 +10,7 @@ class MyServices1 extends StatefulWidget {
 }
 
 class _MyServices1State extends State<MyServices1> {
-  bool myappointment = false;
+  bool myappointment = true;
   bool completedservice = false;
 
   @override
@@ -136,7 +136,7 @@ class _MyServices1State extends State<MyServices1> {
                                   ),
                           ),
                           child: Text(
-                            "My Appointments",
+                            "Completed Services",
                             style: completedservice
                                 ? TextStyle(
                                     color: Colors.white,
