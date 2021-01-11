@@ -86,6 +86,7 @@ class Schedule extends StatelessWidget {
                 "Schedule",
                 style: TextStyle(
                   fontSize: 16.0,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -100,6 +101,7 @@ class BookNow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 40,
       child: Expanded(
         child: FlatButton(
           color: Colors.grey[200],
@@ -111,8 +113,6 @@ class BookNow extends StatelessWidget {
             )
           },
           child: Container(
-            width: 380,
-            height: 215,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -126,9 +126,7 @@ class BookNow extends StatelessWidget {
             child: Center(
               child: Text(
                 "Book Now",
-                style: TextStyle(
-                  fontSize: 16.0,
-                ),
+                style: TextStyle(fontSize: 16.0, color: Colors.white),
               ),
             ),
           ),

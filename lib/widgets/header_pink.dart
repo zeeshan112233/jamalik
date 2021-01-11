@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/home_2.dart';
 
 class header_pink extends StatelessWidget {
   header_pink({
@@ -16,7 +17,7 @@ class header_pink extends StatelessWidget {
         gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-            colors: [Colors.purpleAccent, Colors.pink.shade300]),
+            colors: [Colors.purple[500], Colors.pink.shade300]),
         borderRadius: BorderRadius.only(
             // topLeft: Radius.circular(10),
             // topRight: Radius.circular(10),
@@ -24,29 +25,40 @@ class header_pink extends StatelessWidget {
             bottomRight: Radius.circular(20)),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          GestureDetector(
-            onTap: () => print("Back tapped"),
-            child: new Image.asset(
-              Back,
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0, right: 0),
+            child: GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => home_2()),
+              ),
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+                size: 25,
+              ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(right: 110.0),
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: "DM Sans",
-                color: Colors.white,
-                fontSize: 14.0,
-                fontWeight: FontWeight.w700,
-              ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  text,
+                  style: TextStyle(
+                    fontFamily: "DM Sans",
+                    color: Colors.white,
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
       ),
-      height: MediaQuery.of(context).size.height * 0.14,
+      height: MediaQuery.of(context).size.height * 0.12,
     );
   }
 }

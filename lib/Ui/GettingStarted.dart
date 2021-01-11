@@ -299,7 +299,7 @@ class GettingStartedState extends State<GettingStarted> {
             ),
             Positioned(
               top: 110,
-              left: MediaQuery.of(context).size.width * 0.4,
+              left: screenwidth - 240,
               child: Container(
                 height: 100,
                 width: 100,

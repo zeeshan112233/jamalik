@@ -70,8 +70,6 @@ class _GakharState extends State<Gakhar> {
               companyname: "GAKHAR",
               starimage: "images/star.png",
               ratings: "(302)",
-              heartimage: "images/heart.png",
-              shareimage: "images/share.png",
             )
           ],
         ),

@@ -13,12 +13,26 @@ class home_2 extends StatefulWidget {
 
 class _State extends State<home_2> {
   String name = "Aisha";
-  bool Beauty = false;
+  bool Beauty = true;
   bool Health = false;
   bool other = false;
 
+  var services = [
+    {'text': "Hairdressing Services", 'customimage': "images/kainchi.png"},
+    {'text': "Cosmetology", 'customimage': "images/cos.png"},
+    {'text': "Body Care", 'customimage': "images/leg.png"},
+    {'text': "Spa Procedures", 'customimage': "images/spa.png"},
+    {'text': "Nail Polish", 'customimage': "images/nail.png"},
+    {'text': "Tanning Studios", 'customimage': "images/tan.png"},
+    {'text': "Make Up ", 'customimage': "images/make.png"},
+  ];
+
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -31,7 +45,7 @@ class _State extends State<home_2> {
               leading: Builder(
                 builder: (BuildContext context) {
                   return IconButton(
-                    icon: new Image.asset('images/prefix.png'),
+                    icon: new Image.asset('images/menuu.png'),
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
                     },
@@ -50,11 +64,11 @@ class _State extends State<home_2> {
                             builder: (context) => notification()));
                   },
                   child: IconButton(
-                    icon: new Image.asset('images/suffix.png'),
+                    icon: new Image.asset('images/not.png'),
                   ),
                 ),
                 SizedBox(
-                  width: 30,
+                  width: 10,
                 )
               ]),
 
@@ -63,8 +77,7 @@ class _State extends State<home_2> {
           //   name: "Ifraham :p",
           // ),
           body: Container(
-            // height: MediaQuery.of(context).size.height * 0.5,
-            color: Colors.white,
+            height: screenheight - kToolbarHeight,
             child: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: MediaQuery.of(context).size.width * 0.02,
@@ -73,14 +86,9 @@ class _State extends State<home_2> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 15,
+                    height: 10,
                   ),
-                  // Container(
-                  //   height: 50,
-                  //   width: 400,
-                  //   color: Colors.red,
-                  //   child: Row(),
-                  // ),
+
                   TF(
                     controller: null,
                     hintText: 'Rawalpindi',
@@ -92,22 +100,23 @@ class _State extends State<home_2> {
                     "Hey, $name",
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
-                  Text("Welcome to Jumalik"),
+                  Text("Welcome to Jamalik"),
                   SizedBox(height: 5),
                   Center(
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(10.0),
                         child: Image.asset(
                           "images/home_2pic.png",
-                          width: 400.0,
-                          height: 220.0,
+                          width: screenwidth,
+                          height: screenheight * 0.25,
                           fit: BoxFit.fill,
                         )),
                   ),
 
                   //............................................button1..................................................
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding:
+                        const EdgeInsets.only(left: 8.0, right: 8, top: 13),
                     child: Container(
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
@@ -122,6 +131,37 @@ class _State extends State<home_2> {
                                   Beauty = true;
                                   Health = false;
                                   other = false;
+
+                                  services = [
+                                    {
+                                      'text': "Hairdressing Services",
+                                      'customimage': "images/kainchi.png"
+                                    },
+                                    {
+                                      'text': "Cosmetology",
+                                      'customimage': "images/cos.png"
+                                    },
+                                    {
+                                      'text': "Body Care",
+                                      'customimage': "images/leg.png"
+                                    },
+                                    {
+                                      'text': "Spa Procedures",
+                                      'customimage': "images/spa.png"
+                                    },
+                                    {
+                                      'text': "Nail Polish",
+                                      'customimage': "images/nail.png"
+                                    },
+                                    {
+                                      'text': "Tanning Studios",
+                                      'customimage': "images/tan.png"
+                                    },
+                                    {
+                                      'text': "Make Up ",
+                                      'customimage': "images/make.png"
+                                    },
+                                  ];
                                 })
                               },
                               child: Container(
@@ -201,6 +241,24 @@ class _State extends State<home_2> {
                                   Beauty = false;
                                   Health = true;
                                   other = false;
+                                  services = [
+                                    {
+                                      'text': "Massage",
+                                      'customimage': "images/massage.png"
+                                    },
+                                    {
+                                      'text': "Sport Training",
+                                      'customimage': "images/sports.png"
+                                    },
+                                    {
+                                      'text': "Private Doctor",
+                                      'customimage': "images/doctor.png"
+                                    },
+                                    {
+                                      'text': "Diagnosis / Examination",
+                                      'customimage': "images/exam.png"
+                                    },
+                                  ];
                                 })
                               },
                               child: Container(
@@ -271,7 +329,6 @@ class _State extends State<home_2> {
                             SizedBox(
                               width: 20,
                             ),
-//...................................................button3...........................................
                             FlatButton(
                               padding: EdgeInsets.symmetric(
                                   vertical: 5.0, horizontal: 1),
@@ -280,6 +337,13 @@ class _State extends State<home_2> {
                                   Beauty = false;
                                   Health = false;
                                   other = true;
+
+                                  services = [
+                                    {
+                                      'text': "Consultaion",
+                                      'customimage': "images/consult.png"
+                                    },
+                                  ];
                                 })
                               },
                               child: Container(
@@ -355,20 +419,16 @@ class _State extends State<home_2> {
 
                   Expanded(
                     child: Container(
-                      color: Colors.white,
                       child: ListView.builder(
-                        itemCount: 20,
+                        itemCount: services.length,
                         itemBuilder: (context, index) {
                           return dotcard(
-                              text: "Hairdressing Services",
-                              customimage: "images/kainchi.png");
+                              text: services[index]['text'],
+                              customimage: services[index]['customimage']);
                         },
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 50,
-                  )
                 ],
               ),
             ),

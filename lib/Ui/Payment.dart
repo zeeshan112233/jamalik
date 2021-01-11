@@ -24,6 +24,7 @@ class Payment extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
               PaymentDetails(),
+              Expanded(child: SizedBox()),
               BookNow(),
             ],
           ),

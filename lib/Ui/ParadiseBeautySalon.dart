@@ -9,9 +9,9 @@ class ParadiseBeautySalon extends StatefulWidget {
 }
 
 class _ParadiseBeautySalonState extends State<ParadiseBeautySalon> {
-  bool services = false;
+  bool services = true;
   bool about = false;
-   bool location = false;
+  bool location = false;
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -56,7 +56,6 @@ class _ParadiseBeautySalonState extends State<ParadiseBeautySalon> {
                           services = true;
                           about = false;
                           location = false;
-
                         })
                       },
                       child: Container(
@@ -116,7 +115,7 @@ class _ParadiseBeautySalonState extends State<ParadiseBeautySalon> {
                         setState(() {
                           services = false;
                           about = true;
-                          location= false;
+                          location = false;
                         })
                       },
                       child: Container(
@@ -177,7 +176,7 @@ class _ParadiseBeautySalonState extends State<ParadiseBeautySalon> {
                         setState(() {
                           services = false;
                           about = false;
-                          location=true;
+                          location = true;
                         })
                       },
                       child: Container(

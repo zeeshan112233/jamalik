@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/Checkout.dart';
 import 'package:jamalik/Ui/Favourites.dart';
 import 'package:jamalik/Ui/MyServices1.dart';
+import 'package:jamalik/Ui/ParadiseBeautySalon.dart';
+import 'package:jamalik/Ui/Payment.dart';
+import 'package:jamalik/Ui/ProviderScreen.dart';
+import 'package:jamalik/Ui/Servicesscreen.dart';
 import 'package:jamalik/Ui/aboutapp.dart';
 import 'package:jamalik/Ui/coupen.dart';
 import 'package:jamalik/Ui/customersupport.dart';
@@ -23,12 +28,12 @@ class NavDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        padding: const EdgeInsets.only(top: 50.0),
+        padding: const EdgeInsets.only(top: 20.0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
-              colors: [Colors.purpleAccent, Colors.pink.shade300]),
+              colors: [Colors.purple[500], Colors.pink.shade300]),
         ),
         child: ListView(
           padding: EdgeInsets.zero,
@@ -125,21 +130,79 @@ class NavDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    'Coupons',
+                    'Providers',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onTap: () => {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => coupen(),
+                        builder: (context) => ProviderScreen(),
+                      ),
+                    )
+                  },
+                ),
+                // ListTile(
+                //   title: Text(
+                //     'Coupons',
+                //     style: TextStyle(color: Colors.white, fontSize: 20),
+                //   ),
+                //   onTap: () => {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => coupen(),
+                //       ),
+                //     )
+                //   },
+                // ),
+                ListTile(
+                  title: Text(
+                    'Customer Support',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onTap: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => customersupport(),
+                      ),
+                    )
+                  },
+                ),
+
+                ListTile(
+                  title: Text(
+                    'Services',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onTap: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Servicesscreen(),
+                      ),
+                    )
+                  },
+                ),
+
+                ListTile(
+                  title: Text(
+                    'Payments',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  onTap: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Payment(),
                       ),
                     )
                   },
                 ),
                 ListTile(
                   title: Text(
-                    'Favourite',
+                    'Favourites',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onTap: () => {
@@ -151,16 +214,17 @@ class NavDrawer extends StatelessWidget {
                     )
                   },
                 ),
+
                 ListTile(
                   title: Text(
-                    'Customer Support',
+                    'Paradise Beauty Saloon',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onTap: () => {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => customersupport(),
+                        builder: (context) => ParadiseBeautySalon(),
                       ),
                     )
                   },
@@ -181,20 +245,6 @@ class NavDrawer extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
-                    'Language',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  onTap: () => {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => language(),
-                      ),
-                    )
-                  },
-                ),
-                ListTile(
-                  title: Text(
                     'About App',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
@@ -207,20 +257,50 @@ class NavDrawer extends StatelessWidget {
                     )
                   },
                 ),
+
                 ListTile(
                   title: Text(
-                    'Logout',
+                    'Checkout Widget',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   onTap: () => {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => logout(),
+                        builder: (context) => Checkout(),
                       ),
                     )
                   },
                 ),
+
+                //                 ListTile(
+                //   title: Text(
+                //     'Logout',
+                //     style: TextStyle(color: Colors.white, fontSize: 20),
+                //   ),
+                //   onTap: () => {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => logout(),
+                //       ),
+                //     )
+                //   },
+                // ),
+                // ListTile(
+                //   title: Text(
+                //     'Language',
+                //     style: TextStyle(color: Colors.white, fontSize: 20),
+                //   ),
+                //   onTap: () => {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => language(),
+                //       ),
+                //     )
+                //   },
+                // ),
               ],
             )
           ],

@@ -380,15 +380,19 @@ class PaymentDetails extends StatelessWidget {
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.7,
+                height: 100,
                 color: Color(0xffDFE5ED),
-                child: TextField(
-                  autofocus: false,
-                  style: TextStyle(fontSize: 10.0, color: Color(0xff982877)),
-                  decoration: InputDecoration(
-                    hintText: 'Any Special Requests',
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(25.7),
+                child: Padding(
+                  padding: const EdgeInsets.all(28.0),
+                  child: TextField(
+                    autofocus: false,
+                    style: TextStyle(fontSize: 10.0, color: Color(0xff982877)),
+                    decoration: InputDecoration(
+                      hintText: 'Any Special Requests',
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(25.7),
+                      ),
                     ),
                   ),
                 ),

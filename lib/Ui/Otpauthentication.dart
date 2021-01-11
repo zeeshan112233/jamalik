@@ -17,14 +17,17 @@ class OtpauthenticationState extends State<Otpauthentication> {
   bool passwordvalid = false;
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Material(
         child: SizedBox(
           child: Stack(
             children: [
               Container(
-                // height: 200,
-                // width: 300,
+                height: screenheight * 0.7,
+                width: screenwidth,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -39,89 +42,54 @@ class OtpauthenticationState extends State<Otpauthentication> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.85,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: new BorderRadius.only(
-                      topLeft: const Radius.circular(50.0),
-                      topRight: const Radius.circular(50.0),
-                      // bottomLeft: const Radius.circular(10.0),
-                      // bottomRight: const Radius.circular(10.0),
-                    ),
-                    color: Colors.white,
-                  ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.10,
-                      ),
-                      Text("OTP Authentication ",
-                          style: TextStyle(fontSize: 24)),
-                      SizedBox(height: 5),
-                      Text(
-                        "An authentication code has been sent to",
-                        style: TextStyle(
-                          color: Color(0xff989BAD),
+                  height: screenheight - 170,
+                  width: screenwidth,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: new BorderRadius.only(
+                          topLeft: const Radius.circular(50.0),
+                          topRight: const Radius.circular(50.0),
+                          // bottomLeft: const Radius.circular(10.0),
+                          // bottomRight: const Radius.circular(10.0),
                         ),
+                        color: Colors.white,
                       ),
-                      SizedBox(height: 5),
-                      Text(
-                        phoneno,
-                        style: TextStyle(
-                          color: Color(0xff989BAD),
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.06,
-                      ),
-                      PinCodeTextField(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                      child: Column(
                         children: [
-                          Text(" I didn't recieve code ! "),
-                          GestureDetector(
-                            child: Text(
-                              "Resend!",
-                              style: TextStyle(
-                                color: Color(0xffA63786),
-                              ),
-                            ),
-                            onTap: () => print("Forgot touched"),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.10,
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.13,
-                      ),
-                      PinkButtons(
-                        Buttontext: "NEXT",
-                        onpress: () => {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Passwordrecovery()),
-                          )
-                        },
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
+                          Text("OTP Authentication ",
+                              style: TextStyle(fontSize: 24)),
+                          SizedBox(height: 5),
+                          Text(
+                            "An authentication code has been sent to",
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            phoneno,
+                            style: TextStyle(
+                              color: Color(0xff989BAD),
+                            ),
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.06,
+                          ),
+                          PinCodeTextField(),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(" By signing up you agree to our. "),
-                              SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.012,
-                              ),
+                              Text(" I didn't recieve code ! "),
                               GestureDetector(
                                 child: Text(
-                                  "Terms and Conditions!",
+                                  "Resend!",
                                   style: TextStyle(
                                     color: Color(0xffA63786),
                                   ),
@@ -130,15 +98,58 @@ class OtpauthenticationState extends State<Otpauthentication> {
                               ),
                             ],
                           ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.12,
+                          ),
+                          PinkButtons(
+                              Buttontext: "NEXT",
+                              onpress: () => {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              Passwordrecovery()),
+                                    )
+                                  },
+                              TextColor: Colors.white),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.02,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                children: [
+                                  Text(" By signing up you agree to our. "),
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.012,
+                                  ),
+                                  GestureDetector(
+                                    child: Text(
+                                      "Terms and Conditions!",
+                                      style: TextStyle(
+                                        color: Color(0xffA63786),
+                                      ),
+                                    ),
+                                    onTap: () => print("Forgot touched"),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.05,
+                          ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.12,
-                left: MediaQuery.of(context).size.width * 0.4,
+                top: 110,
+                left: screenwidth - 240,
                 child: Container(
                   height: 100,
                   width: 100,

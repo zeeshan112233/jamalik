@@ -16,14 +16,17 @@ class VerifyidentityState extends State<Verifyidentity> {
   bool passwordvalid = false;
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Material(
         child: SizedBox(
           child: Stack(
             children: [
               Container(
-                // height: 200,
-                // width: 300,
+                height: screenheight * 0.7,
+                width: screenwidth,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -38,7 +41,8 @@ class VerifyidentityState extends State<Verifyidentity> {
               Positioned(
                 top: 170,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.8,
+                  height: screenheight - 170,
+                  width: screenwidth,
                   child: SingleChildScrollView(
                     child: Container(
                       width: MediaQuery.of(context).size.width,
@@ -132,7 +136,7 @@ class VerifyidentityState extends State<Verifyidentity> {
                                   ),
                                   SizedBox(
                                     height: MediaQuery.of(context).size.height *
-                                        0.2,
+                                        0.1,
                                   ),
                                 ],
                               ),
@@ -145,8 +149,8 @@ class VerifyidentityState extends State<Verifyidentity> {
                 ),
               ),
               Positioned(
-                top: MediaQuery.of(context).size.height * 0.14,
-                left: MediaQuery.of(context).size.width * 0.36,
+                top: 110,
+                left: screenwidth - 240,
                 child: Container(
                   height: 100,
                   width: 100,

@@ -12,8 +12,15 @@ class Servicesscreen extends StatefulWidget {
 class ServicescreenState extends State<Servicesscreen> {
   String text = "Hair Cut";
   String image = "images/makeup.png";
+  var services = [
+    {'text': "Hair Cut", 'customimage': "images/makeup.png"},
+    {'text': "Hair Color", 'customimage': "images/makeup.png"},
+    {'text': "Styling", 'customimage': "images/makeup.png"},
+    {'text': "Hair Extension", 'customimage': "images/makeup.png"},
+    {'text': "Hair Treatment", 'customimage': "images/makeup.png"},
+  ];
 
-  bool Hairdressingserivices = false;
+  bool Hairdressingserivices = true;
   bool cosmetology = false;
 
   @override
@@ -89,7 +96,7 @@ class ServicescreenState extends State<Servicesscreen> {
                                         0.05,
                                   ),
                                   Text(
-                                    "Hairdressingserivices",
+                                    "Hairdressing Services",
                                     style: Hairdressingserivices
                                         ? TextStyle(
                                             color: Colors.white,
@@ -193,10 +200,11 @@ class ServicescreenState extends State<Servicesscreen> {
               Expanded(
                 child: Container(
                   child: ListView.builder(
-                      itemCount: 20,
+                      itemCount: services.length,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 3.0),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 5.0, horizontal: 18),
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -227,14 +235,14 @@ class ServicescreenState extends State<Servicesscreen> {
                                             0.01,
                                   ),
                                   child: Image.asset(
-                                    image,
+                                    services[index]['customimage'],
                                   ),
                                 ),
                                 SizedBox(
                                   width: 40,
                                 ),
                                 Text(
-                                  text,
+                                  services[index]['text'],
                                   style: TextStyle(fontSize: 25),
                                 ),
                               ],

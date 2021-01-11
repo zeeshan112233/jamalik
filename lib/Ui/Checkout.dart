@@ -18,28 +18,28 @@ class Checkout extends StatelessWidget {
                   text: "Checkout",
                 ),
               ),
-
-             
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   "SELECT PAYMENT METHOD",
-                  
                   style: TextStyle(
                     color: const Color(0xFFA63496),
                     fontFamily: "DM Sans",
                     fontSize: 14.0,
                     fontWeight: FontWeight.w400,
                   ),
-                  
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
               Padding(
-               padding: const EdgeInsets.only(top: 20.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: PayViaDebitCard(),
               ),
               Padding(
-               padding: const EdgeInsets.only(top: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: PayViaCreditCard(),
               ),
             ],

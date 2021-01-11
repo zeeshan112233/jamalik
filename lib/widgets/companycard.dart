@@ -4,8 +4,8 @@ class companycard extends StatelessWidget {
   companycard({
     this.mainbackgroungimage,
     this.companylogo,
-    this.heartimage,
-    this.shareimage,
+    // this.heartimage,
+    // this.shareimage,
     this.category,
     this.companycategory,
     this.companyname,
@@ -16,8 +16,8 @@ class companycard extends StatelessWidget {
 
   final String mainbackgroungimage;
   final String companylogo;
-  final String heartimage;
-  final String shareimage;
+  // final String heartimage;
+  // final String shareimage;
   final String category;
   final String companycategory;
   final String companyname;
@@ -27,61 +27,66 @@ class companycard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return Stack(children: [
       Container(
-        height: MediaQuery.of(context).size.height * 0.27,
-        width: MediaQuery.of(context).size.width * 0.92,
+        height: screenheight * 0.28,
+        width: screenwidth - 30,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [Colors.purpleAccent, Colors.pink.shade300]),
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20)),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.purple[500], Colors.pink.shade300]),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
-        child: Image.asset(
-          mainimage,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(18.0),
+          child: Image.asset(
+            mainimage,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
       Positioned(
-        top: 40,
+        top: screenheight * 0.02,
         left: 20,
         child: new Container(
-            margin: EdgeInsets.all(10.0),
             child: new Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                new Image.asset(
-                  companylogo,
-                  width: 50,
-                  height: 50,
-                ),
-                SizedBox(height: 5),
-                new Text(
-                  category,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 15, color: Colors.white),
-                ),
-                SizedBox(height: 1),
-                new Text(
-                  companycategory,
-                  textAlign: TextAlign.right,
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-                SizedBox(height: 1),
-                new Text(
-                  companyname,
-                  style: TextStyle(fontSize: 30, color: Colors.white),
-                ),
-                SizedBox(height: 5),
-              ],
-            )),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            new Image.asset(
+              companylogo,
+              width: 50,
+              height: 50,
+            ),
+            SizedBox(height: 5),
+            new Text(
+              category,
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 15, color: Colors.white),
+            ),
+            SizedBox(height: 1),
+            new Text(
+              companycategory,
+              textAlign: TextAlign.right,
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+            SizedBox(height: 1),
+            new Text(
+              companyname,
+              style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 5),
+          ],
+        )),
       ),
       Positioned(
-        top: 167,
+        top: 150,
         left: 20,
         child: new Container(
           margin: EdgeInsets.all(10.0),
@@ -112,7 +117,7 @@ class companycard extends StatelessWidget {
                   borderRadius: new BorderRadius.circular(5)),
               color: Colors.white,
               textColor: Colors.purple.shade600,
-              child: Text('Button', style: TextStyle(fontSize: 20)),
+              child: Text('Book', style: TextStyle(fontSize: 20)),
             ),
           ]),
         ),
@@ -125,15 +130,19 @@ class companycard extends StatelessWidget {
           child: new Row(children: [
             GestureDetector(
               onTap: () => print("heart tapped"),
-              child: new Image.asset(
-                heartimage,
+              child: Icon(
+                Icons.auto_fix_high,
+                color: Colors.white,
+                size: 35,
               ),
             ),
             SizedBox(width: 10),
             GestureDetector(
               onTap: () => print("share tapped"),
-              child: new Image.asset(
-                shareimage,
+              child: Icon(
+                Icons.share,
+                color: Colors.white,
+                size: 35,
               ),
             ),
           ]),

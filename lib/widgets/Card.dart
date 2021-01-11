@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 class PayViaDebitCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return Container(
-      width: 300,
+      width: screenwidth,
       height: 80,
       decoration: BoxDecoration(
-        borderRadius: new BorderRadius.only(
-          topLeft: const Radius.circular(10.0),
-          topRight: const Radius.circular(10.0),
-          bottomLeft: const Radius.circular(10.0),
-          bottomRight: const Radius.circular(10.0),
+        borderRadius: new BorderRadius.all(
+          Radius.circular(10.0),
         ),
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [Colors.purpleAccent, Colors.pink.shade300],
+          colors: [Colors.purple[500], Colors.pink.shade300],
         ),
       ),
       child: Row(
@@ -51,8 +51,11 @@ class PayViaDebitCard extends StatelessWidget {
 class PayViaCreditCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return Container(
-      width: 300,
+      width: screenwidth,
       height: 80,
       decoration: BoxDecoration(
         borderRadius: new BorderRadius.only(
@@ -64,7 +67,7 @@ class PayViaCreditCard extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [Colors.purpleAccent, Colors.pink.shade300],
+          colors: [Colors.purple[500], Colors.pink.shade300],
         ),
       ),
       child: Row(

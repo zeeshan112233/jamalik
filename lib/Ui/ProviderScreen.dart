@@ -14,7 +14,32 @@ class ProviderScreenState extends State<ProviderScreen> {
   String text = "Hair Cut";
   String image = "images/makeup.png";
 
-  bool Private = false;
+  var providers = [
+    {
+      'mainimage': "images/private1.jpeg",
+      'companylogo': "images/logo.png",
+      'category': "Rani",
+      'companycategory': "Hair Styler",
+      'companyname': "Raji Beauty Parlor",
+      'starimage': "images/star.png",
+      'ratings': "(262)",
+      'heartimage': "images/heart.png",
+      'shareimage': "images/share.png",
+    },
+    {
+      'mainimage': "images/private2.jpeg",
+      'companylogo': "images/logo.png",
+      'category': "Paradise",
+      'companycategory': "Beauty Saloon",
+      'companyname': "Raji Beauty Saloon",
+      'starimage': "images/star.png",
+      'ratings': "(302)",
+      'heartimage': "images/heart.png",
+      'shareimage': "images/share.png",
+    },
+  ];
+
+  bool Private = true;
   bool Company = false;
 
   @override
@@ -46,6 +71,30 @@ class ProviderScreenState extends State<ProviderScreen> {
                             setState(() {
                               Private = true;
                               Company = false;
+                              providers = [
+                                {
+                                  'mainimage': "images/private1.jpeg",
+                                  'companylogo': "images/logo.png",
+                                  'category': "Rani",
+                                  'companycategory': "Hair Styler",
+                                  'companyname': "Raji Beauty Parlor",
+                                  'starimage': "images/star.png",
+                                  'ratings': "(262)",
+                                  'heartimage': "images/heart.png",
+                                  'shareimage': "images/share.png",
+                                },
+                                {
+                                  'mainimage': "images/private2.jpeg",
+                                  'companylogo': "images/logo.png",
+                                  'category': "Paradise",
+                                  'companycategory': "Beauty Saloon",
+                                  'companyname': "Raji Beauty Saloon",
+                                  'starimage': "images/star.png",
+                                  'ratings': "(302)",
+                                  'heartimage': "images/heart.png",
+                                  'shareimage': "images/share.png",
+                                },
+                              ];
                             })
                           },
                           child: Container(
@@ -120,6 +169,30 @@ class ProviderScreenState extends State<ProviderScreen> {
                             setState(() {
                               Private = false;
                               Company = true;
+                              providers = [
+                                {
+                                  'mainimage': "images/company2.jpeg",
+                                  'companylogo': "images/logo.png",
+                                  'category': "Paradise",
+                                  'companycategory': "Beauty Saloon",
+                                  'companyname': "Raji Beauty Parlor",
+                                  'starimage': "images/star.png",
+                                  'ratings': "(262)",
+                                  'heartimage': "images/heart.png",
+                                  'shareimage': "images/share.png",
+                                },
+                                {
+                                  'mainimage': "images/company2.jpeg",
+                                  'companylogo': "images/logo.png",
+                                  'category': "Cosmetica",
+                                  'companycategory': "Beauty Saloon and SPA",
+                                  'companyname': "HWI",
+                                  'starimage': "images/star.png",
+                                  'ratings': "(302)",
+                                  'heartimage': "images/heart.png",
+                                  'shareimage': "images/share.png",
+                                }
+                              ];
                             })
                           },
                           child: Container(
@@ -194,7 +267,7 @@ class ProviderScreenState extends State<ProviderScreen> {
               Expanded(
                 child: Container(
                   child: ListView.builder(
-                      itemCount: 10,
+                      itemCount: providers.length,
                       itemBuilder: (context, index) {
                         return Padding(
                           padding: const EdgeInsets.symmetric(vertical: 6.0),
@@ -203,15 +276,14 @@ class ProviderScreenState extends State<ProviderScreen> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 companycard(
-                                  mainimage: "images/paradise.png",
-                                  companylogo: "images/logo.png",
-                                  category: "ali",
-                                  companycategory: "Khan",
-                                  companyname: "GAKHAR",
-                                  starimage: "images/star.png",
-                                  ratings: "(302)",
-                                  heartimage: "images/heart.png",
-                                  shareimage: "images/share.png",
+                                  mainimage: providers[index]['mainimage'],
+                                  companylogo: providers[index]['companylogo'],
+                                  category: providers[index]['category'],
+                                  companycategory: providers[index]
+                                      ['companycategory'],
+                                  companyname: providers[index]['companyname'],
+                                  //      starimage: providers[index]['mainimage'],
+                                  ratings: providers[index]['ratings'],
                                 ),
                               ],
                             ),
