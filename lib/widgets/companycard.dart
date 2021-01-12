@@ -4,8 +4,6 @@ class companycard extends StatelessWidget {
   companycard({
     this.mainbackgroungimage,
     this.companylogo,
-    // this.heartimage,
-    // this.shareimage,
     this.category,
     this.companycategory,
     this.companyname,
@@ -16,8 +14,6 @@ class companycard extends StatelessWidget {
 
   final String mainbackgroungimage;
   final String companylogo;
-  // final String heartimage;
-  // final String shareimage;
   final String category;
   final String companycategory;
   final String companyname;
