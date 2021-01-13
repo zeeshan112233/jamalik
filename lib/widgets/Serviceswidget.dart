@@ -16,7 +16,7 @@ class Services extends StatelessWidget {
                 children: [
                   Padding(
                     padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.1),
+                        left: MediaQuery.of(context).size.width * 0.05),
                     child: CircleAvatar(
                       radius: (20),
                       backgroundImage: AssetImage('images/fathima.png'),
@@ -44,7 +44,7 @@ class Services extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.18,
+                width: MediaQuery.of(context).size.width * 0.12,
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4,
@@ -91,7 +91,7 @@ class Services extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.18,
+                width: MediaQuery.of(context).size.width * 0.12,
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4,
@@ -114,7 +114,7 @@ class Services extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.18,
+                width: MediaQuery.of(context).size.width * 0.12,
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.4,
