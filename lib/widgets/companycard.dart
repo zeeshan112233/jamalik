@@ -26,21 +26,16 @@ class companycard extends StatelessWidget {
     final screenheight =
         MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     final screenwidth = MediaQuery.of(context).size.width;
+    final boxheight = screenheight * 0.28;
     return Stack(children: [
       Container(
-        height: screenheight * 0.28,
+        height: screenheight * 0.3,
         width: screenwidth - 30,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.purple[500], Colors.pink.shade300]),
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-        ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(18.0),
           child: Image.asset(
             mainimage,
+            height: boxheight,
             fit: BoxFit.cover,
           ),
         ),
@@ -55,25 +50,25 @@ class companycard extends StatelessWidget {
             new Image.asset(
               companylogo,
               width: 50,
-              height: 50,
+              height: boxheight * 0.20,
             ),
             SizedBox(height: 5),
             new Text(
               category,
               textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 15, color: Colors.white),
+              style: TextStyle(fontSize: boxheight * 0.09, color: Colors.white),
             ),
             SizedBox(height: 1),
             new Text(
               companycategory,
               textAlign: TextAlign.right,
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              style: TextStyle(fontSize: boxheight * 0.13, color: Colors.white),
             ),
             SizedBox(height: 1),
             new Text(
               companyname,
               style: TextStyle(
-                  fontSize: 30,
+                  fontSize: boxheight * 0.15,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
@@ -82,10 +77,10 @@ class companycard extends StatelessWidget {
         )),
       ),
       Positioned(
-        top: 150,
+        top: boxheight - 44,
         left: 20,
         child: new Container(
-          margin: EdgeInsets.all(10.0),
+          // margin: EdgeInsets.all(10.0),
           child: new Row(children: [
             Row(
               children: List.generate(5, (Null) {
@@ -105,7 +100,7 @@ class companycard extends StatelessWidget {
 
             //space between button and rating
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.10,
+              width: MediaQuery.of(context).size.width * 0.13,
             ),
             RaisedButton(
               onPressed: () => print("hey "),
@@ -113,14 +108,14 @@ class companycard extends StatelessWidget {
                   borderRadius: new BorderRadius.circular(5)),
               color: Colors.white,
               textColor: Colors.purple.shade600,
-              child: Text('Book', style: TextStyle(fontSize: 20)),
+              child: Text('Book Now', style: TextStyle(fontSize: 16)),
             ),
           ]),
         ),
       ),
       Positioned(
         right: 20,
-        top: 35,
+        top: 10,
         child: new Container(
           margin: EdgeInsets.all(10.0),
           child: new Row(children: [

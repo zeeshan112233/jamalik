@@ -26,6 +26,9 @@ class NavDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenheight =
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+    final screenwidth = MediaQuery.of(context).size.width;
     return Drawer(
       child: Container(
         padding: const EdgeInsets.only(top: 20.0),
@@ -57,7 +60,14 @@ class NavDrawer extends StatelessWidget {
                     ),
                   ],
                 ),
-                Image.asset(dp),
+
+                //circular dp
+                CircleAvatar(
+                  radius: 30.0,
+                  backgroundImage: AssetImage("images/company2.jpeg"),
+                  backgroundColor: Colors.transparent,
+                ),
+
                 SizedBox(height: 40.0),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

@@ -38,39 +38,62 @@ class _State extends State<home_2> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Scaffold(
           drawer: NavDrawer(
-            dp: "images/logo.png",
+            dp: "images/company2.jpeg",
             name: "Jamalik",
           ),
-          appBar: AppBar(
-              leading: Builder(
-                builder: (BuildContext context) {
-                  return IconButton(
-                    icon: new Image.asset('images/menuu.png'),
-                    onPressed: () {
-                      Scaffold.of(context).openDrawer();
-                    },
-                    tooltip:
-                        MaterialLocalizations.of(context).openAppDrawerTooltip,
-                  );
-                },
-              ),
-              backgroundColor: Colors.white,
-              actions: <Widget>[
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => notification()));
-                  },
-                  child: IconButton(
-                    icon: new Image.asset('images/not.png'),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(screenheight * 0.06),
+            child: AppBar(
+                title: Center(
+                  child: Text(
+                    "Welcome $name!",
+                    // textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.w600),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                )
-              ]),
+
+                //  Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     Text(
+                //       "Hey, $name",
+                //       style:
+                //           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                //     ),
+                //     // Text("Welcome to Jamalik"),
+                //   ],
+                // ),
+                leading: Builder(
+                  builder: (BuildContext context) {
+                    return IconButton(
+                      icon: new Image.asset('images/menuu.png'),
+                      onPressed: () {
+                        Scaffold.of(context).openDrawer();
+                      },
+                      tooltip: MaterialLocalizations.of(context)
+                          .openAppDrawerTooltip,
+                    );
+                  },
+                ),
+                backgroundColor: Colors.white,
+                actions: <Widget>[
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => notification()));
+                    },
+                    child: IconButton(
+                      icon: new Image.asset('images/not.png'),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  )
+                ]),
+          ),
 
           // drawer: NavDrawer(
           //   dp: "images/logo.png",
@@ -80,7 +103,7 @@ class _State extends State<home_2> {
             height: screenheight - kToolbarHeight,
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.02,
+                horizontal: MediaQuery.of(context).size.width * 0.01,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,18 +112,51 @@ class _State extends State<home_2> {
                     height: 10,
                   ),
 
-                  TF(
+                  //location text field
+                  TextField(
                     controller: null,
-                    hintText: 'Rawalpindi',
-                    prefixIcon: Icons.location_pin,
-                    suffixIcon: Icons.search,
-                    tfColor: Colors.grey.shade300,
+                    decoration: InputDecoration(
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(0),
+                      prefixIcon: Icon(Icons.location_pin),
+                      suffixIcon: Icon(Icons.search),
+                      hintText: 'Enter a search term',
+                      fillColor: Colors.grey.shade300,
+                      filled: true,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade300,
+                          width: 0.5,
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade300,
+                          width: 1.0,
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade300,
+                          width: 1.0,
+                        ),
+                      ),
+                    ),
                   ),
-                  Text(
-                    "Hey, $name",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
-                  Text("Welcome to Jamalik"),
+
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text(
+                  //       "Hey, $name",
+                  //       style: TextStyle(
+                  //           fontSize: 30, fontWeight: FontWeight.bold),
+                  //     ),
+                  //     Text("Welcome to Jamalik"),
+                  //   ],
+                  // ),
+
                   SizedBox(height: 5),
                   Center(
                     child: ClipRRect(
@@ -108,7 +164,7 @@ class _State extends State<home_2> {
                         child: Image.asset(
                           "images/home_2pic.png",
                           width: screenwidth,
-                          height: screenheight * 0.25,
+                          height: screenheight * 0.20,
                           fit: BoxFit.fill,
                         )),
                   ),
