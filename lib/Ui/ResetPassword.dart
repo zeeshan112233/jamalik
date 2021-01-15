@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:jamalik/Buttons.dart';
 import 'package:jamalik/Ui/home_2.dart';
 import 'package:jamalik/widgets/TF.dart';
@@ -13,6 +14,8 @@ class ResetPassword extends StatefulWidget {
 }
 
 class ResetPasswordState extends State<ResetPassword> {
+  final TextEditingController _passwordcontroller = new TextEditingController();
+  final TextEditingController _confirmpasswordcontroller = new TextEditingController();
   bool passwordvalid = false;
   @override
   Widget build(BuildContext context) {
@@ -100,12 +103,14 @@ class ResetPasswordState extends State<ResetPassword> {
                                       MediaQuery.of(context).size.height * 0.02,
                                 ),
                                 TF(
-                                  controller: null,
+                                  controller: _passwordcontroller,
                                   hintText: '**********',
-                                  // isPassword: true,
+                                  isPassword: true,
                                   prefixIcon: Icons.lock,
                                   suffixIcon:
-                                      passwordvalid ? Icons.person : null,
+                                      _passwordcontroller.text.length > 8
+                                          ? Icons.check_circle
+                                          : null,
                                   tfColor: Colors.grey.shade300,
                                 ),
                               ],
@@ -129,29 +134,56 @@ class ResetPasswordState extends State<ResetPassword> {
                                       MediaQuery.of(context).size.height * 0.02,
                                 ),
                                 TF(
-                                  controller: null,
-                                  hintText: '**********',
-                                  // isPassword: true,
-                                  prefixIcon: Icons.lock,
-                                  suffixIcon:
-                                      passwordvalid ? Icons.person : null,
-                                  tfColor: Colors.grey.shade300,
-                                ),
+                                controller: _confirmpasswordcontroller,
+                                hintText: '**********',
+                                isPassword: true,
+                                prefixIcon: Icons.phone_android,
+                                suffixIcon: (_passwordcontroller.text ==
+                                            _confirmpasswordcontroller.text) &&
+                                        (_passwordcontroller.text.isNotEmpty)
+                                    ? Icons.check_circle
+                                    : null,
+                                tfColor: Colors.grey.shade300,
+                              ),
+                                
                               ],
                             ),
                           ),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.05,
                           ),
-                          PinkButtons(
-                            TextColor: Colors.white,
+                         PinkButtons(
                             Buttontext: "SIGN IN",
+                            TextColor: Colors.white,
                             onpress: () => {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => home_2()),
-                              )
+                              if (_passwordcontroller.text.length < 8)
+                                {
+                                  Fluttertoast.showToast(
+                                      msg: "Password must be greater then 8",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 1,
+                                      backgroundColor: Colors.red,
+                                      textColor: Colors.white,
+                                      fontSize: 16.0),
+                                }
+                              else if (_passwordcontroller.text !=
+                                _confirmpasswordcontroller.text)
+                              {
+                                Fluttertoast.showToast(
+                                    msg: "Passwords donot Match",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.CENTER,
+                                    timeInSecForIosWeb: 1,
+                                    backgroundColor: Colors.red,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0),
+                              }
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) => home_2()),
+                              // ),
                             },
                           ),
                           SizedBox(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:jamalik/Buttons.dart';
+import 'package:jamalik/widgets/PincodeField.dart';
 import 'package:jamalik/Ui/ResetPassword.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
@@ -12,6 +14,7 @@ class Verifyidentity extends StatefulWidget {
 }
 
 class VerifyidentityState extends State<Verifyidentity> {
+  final TextEditingController _otpcontroller = new TextEditingController();
   String phoneno = "+974 555 555 555 ";
   bool passwordvalid = false;
   @override
@@ -79,7 +82,9 @@ class VerifyidentityState extends State<Verifyidentity> {
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.06,
                           ),
-                          PinCodeTextField(),
+                          PincodeField(
+                            controller: _otpcontroller,
+                          ),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.02,
                           ),
@@ -105,11 +110,22 @@ class VerifyidentityState extends State<Verifyidentity> {
                             Buttontext: "NEXT",
                             TextColor: Colors.white,
                             onpress: () => {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => ResetPassword()),
-                              )
+                              if (_otpcontroller.text.length != 4)
+                                      {
+                                        Fluttertoast.showToast(
+                                            msg: "Enter 4 digits",
+                                            toastLength: Toast.LENGTH_SHORT,
+                                            gravity: ToastGravity.BOTTOM,
+                                            timeInSecForIosWeb: 1,
+                                            backgroundColor: Colors.red,
+                                            textColor: Colors.white,
+                                            fontSize: 16.0),
+                                      }
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) => ResetPassword()),
+                              // )
                             },
                           ),
                           SizedBox(
