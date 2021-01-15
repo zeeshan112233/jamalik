@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/widgets/PincodeField.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import '../Buttons.dart';
 import 'Passwordrecovery.dart';
@@ -13,6 +15,7 @@ class Otpauthentication extends StatefulWidget {
 }
 
 class OtpauthenticationState extends State<Otpauthentication> {
+  final TextEditingController _otpcontroller = new TextEditingController();
   String phoneno = "+974 555 555 555 ";
   bool passwordvalid = false;
   @override
@@ -79,7 +82,11 @@ class OtpauthenticationState extends State<Otpauthentication> {
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.06,
                           ),
-                          PinCodeTextField(),
+
+                          //otp textfield
+                          PincodeField(
+                            controller: _otpcontroller,
+                          ),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.02,
                           ),
@@ -104,12 +111,23 @@ class OtpauthenticationState extends State<Otpauthentication> {
                           PinkButtons(
                               Buttontext: "NEXT",
                               onpress: () => {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              Passwordrecovery()),
-                                    )
+                                    if (_otpcontroller.text.length != 4)
+                                      {
+                                        Fluttertoast.showToast(
+                                            msg: "Enter 4 digits",
+                                            toastLength: Toast.LENGTH_SHORT,
+                                            gravity: ToastGravity.BOTTOM,
+                                            timeInSecForIosWeb: 1,
+                                            backgroundColor: Colors.red,
+                                            textColor: Colors.white,
+                                            fontSize: 16.0),
+                                      }
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //       builder: (context) =>
+                                    //           Passwordrecovery()),
+                                    // )
                                   },
                               TextColor: Colors.white),
                           SizedBox(
