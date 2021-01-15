@@ -21,7 +21,7 @@ import 'package:jamalik/Ui/Calender.dart';
 
 void main() => runApp(new MaterialApp(
       title: "Welcome",
-      home: new SplashScreen(), //welcome class define in ui folder
+      home: new login(), //welcome class define in ui folder
     ));
 
 class SplashScreen extends StatefulWidget {
