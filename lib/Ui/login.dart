@@ -13,11 +13,14 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  final TextEditingController _phonenocontroller = new TextEditingController();
+  bool isloading = false;
+  bool passwordvalid = true;
+
   //password textfield
   final TextEditingController _passwordcontroller = new TextEditingController();
-  bool passwordvalid = true;
-  bool isloading = false;
+
+  final TextEditingController _phonenocontroller = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final screenheight =
@@ -166,7 +169,7 @@ class _loginState extends State<login> {
                                   Buttontext: "SIGN IN",
                                   TextColor: Colors.white,
                                   onpress: () => {
-                                        if (_phonenocontroller.text.length != 8)
+                                        if (_phonenocontroller.text.length <= 7)
                                           {
                                             Fluttertoast.showToast(
                                                 msg:
@@ -180,7 +183,7 @@ class _loginState extends State<login> {
                                           }
                                         else if (_passwordcontroller
                                                 .text.length <
-                                            8)
+                                            6)
                                           {
                                             Fluttertoast.showToast(
                                                 msg:
@@ -202,10 +205,11 @@ class _loginState extends State<login> {
                                                     password:
                                                         _passwordcontroller
                                                             .text,
-                                                    device_type: 'android',
-                                                    token: '2342424')
+                                                    phonenumber:
+                                                        _phonenocontroller.text)
                                                 .then((value) => {
-                                                          if (value.status)
+                                                          if (value.firstName !=
+                                                              null)
                                                             {
                                                               setState(() {
                                                                 isloading =
@@ -213,15 +217,12 @@ class _loginState extends State<login> {
                                                               }),
                                                               // StoreProvider.of<Appstate>(context)
                                                               //     .dispatch(MyUser(value.user)),
-                                                              print(value.user
-                                                                  .toString()),
+                                                              print(value),
                                                               Fluttertoast.showToast(
                                                                   msg: 'Login Successfull with username : ' +
-                                                                      value.user
-                                                                          .name
+                                                                      value
+                                                                          .firstName
                                                                           .toString()),
-                                                              // Utils.pushReplacement(
-                                                              //     context, AgentMainScreen(uid: value.user.id.toString()))
                                                             }
                                                           else
                                                             {
@@ -234,12 +235,8 @@ class _loginState extends State<login> {
                                                                       msg:
                                                                           'Failed to login ')
                                                             },
-
-                                                          print(value.status),
-                                                          // setState(() {
-                                                          //   _isLoading = false;
-                                                          // })
-                                                          // if (value) {Navigator.pop(context, true)}
+                                                          print(
+                                                              value.toString()),
                                                         }
 
                                                     // Navigator.push(

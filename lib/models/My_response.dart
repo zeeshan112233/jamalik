@@ -1,97 +1,102 @@
-class My_response {
-  bool status;
-  User user;
+class User {
+  int customerId;
+  String email;
+  String firstName;
+  String lastName;
+  String gender;
+  Null birthDate;
+  String mobile;
+  Null photo;
+  String password;
+  String accessToken;
 
-  My_response({this.status, this.user});
+  User(
+      {this.customerId,
+      this.email,
+      this.firstName,
+      this.lastName,
+      this.gender,
+      this.birthDate,
+      this.mobile,
+      this.photo,
+      this.password,
+      this.accessToken});
 
-  My_response.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
-    user = json['user'] != null ? new User.fromJson(json['user']) : null;
+  User.fromJson(Map<String, dynamic> json) {
+    customerId = json['Customer_id'];
+    email = json['Email'];
+    firstName = json['FirstName'];
+    lastName = json['LastName'];
+    gender = json['Gender'];
+    birthDate = json['BirthDate'];
+    mobile = json['Mobile'];
+    photo = json['Photo'];
+    password = json['Password'];
+    accessToken = json['Access_Token'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    if (this.user != null) {
-      data['user'] = this.user.toJson();
-    }
+    data['Customer_id'] = this.customerId;
+    data['Email'] = this.email;
+    data['FirstName'] = this.firstName;
+    data['LastName'] = this.lastName;
+    data['Gender'] = this.gender;
+    data['BirthDate'] = this.birthDate;
+    data['Mobile'] = this.mobile;
+    data['Photo'] = this.photo;
+    data['Password'] = this.password;
+    data['Access_Token'] = this.accessToken;
     return data;
   }
 }
 
-class User {
-  int id;
-  String name;
+// sign up response without
+class UserSignup {
+  int customerId;
   String email;
-  Null emailVerifiedAt;
-  String image;
-  String stateId;
-  Null mls;
-  Null website;
-  String phone;
-  String service;
-  dynamic role;
-  String deviceType;
-  String token;
-  Null firebaseID;
-  String createdAt;
-  String updatedAt;
+  String firstName;
+  String lastName;
+  String gender;
+  Null birthDate;
+  String mobile;
+  Null photo;
+  String password;
 
-  User(
-      {this.id,
-      this.name,
+  UserSignup(
+      {this.customerId,
       this.email,
-      this.emailVerifiedAt,
-      this.image,
-      this.stateId,
-      this.mls,
-      this.website,
-      this.phone,
-      this.service,
-      this.role,
-      this.deviceType,
-      this.token,
-      this.firebaseID,
-      this.createdAt,
-      this.updatedAt});
+      this.firstName,
+      this.lastName,
+      this.gender,
+      this.birthDate,
+      this.mobile,
+      this.photo,
+      this.password});
 
-  User.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    emailVerifiedAt = json['email_verified_at'];
-    image = json['image'];
-    stateId = json['state_id'];
-    mls = json['mls'];
-    website = json['website'];
-    phone = json['phone'];
-    service = json['service'];
-    role = json['role'];
-    deviceType = json['device_type'];
-    token = json['token'];
-    firebaseID = json['firebaseID'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
+  UserSignup.fromJson(Map<String, dynamic> json) {
+    customerId = json['Customer_id'];
+    email = json['Email'];
+    firstName = json['FirstName'];
+    lastName = json['LastName'];
+    gender = json['Gender'];
+    birthDate = json['BirthDate'];
+    mobile = json['Mobile'];
+    photo = json['Photo'];
+    password = json['Password'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['email_verified_at'] = this.emailVerifiedAt;
-    data['image'] = this.image;
-    data['state_id'] = this.stateId;
-    data['mls'] = this.mls;
-    data['website'] = this.website;
-    data['phone'] = this.phone;
-    data['service'] = this.service;
-    data['role'] = this.role;
-    data['device_type'] = this.deviceType;
-    data['token'] = this.token;
-    data['firebaseID'] = this.firebaseID;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
+    data['Customer_id'] = this.customerId;
+    data['Email'] = this.email;
+    data['FirstName'] = this.firstName;
+    data['LastName'] = this.lastName;
+    data['Gender'] = this.gender;
+    data['BirthDate'] = this.birthDate;
+    data['Mobile'] = this.mobile;
+    data['Photo'] = this.photo;
+    data['Password'] = this.password;
     return data;
   }
 }
