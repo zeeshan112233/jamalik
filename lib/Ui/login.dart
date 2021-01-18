@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:jamalik/APIs/loginAPI.dart';
 import 'package:jamalik/Buttons.dart';
 import 'package:jamalik/Ui/Otpauthentication.dart';
+import 'package:jamalik/Ui/Profile.dart';
+import 'package:jamalik/Ui/home_2.dart';
+import 'package:jamalik/redux/actions.dart';
+import 'package:jamalik/redux/model/app_state.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/ButtonsWidget.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -208,43 +213,42 @@ class _loginState extends State<login> {
                                                     phonenumber:
                                                         _phonenocontroller.text)
                                                 .then((value) => {
-                                                          if (value.firstName !=
-                                                              null)
-                                                            {
-                                                              setState(() {
-                                                                isloading =
-                                                                    false;
-                                                              }),
-                                                              // StoreProvider.of<Appstate>(context)
-                                                              //     .dispatch(MyUser(value.user)),
-                                                              print(value),
-                                                              Fluttertoast.showToast(
-                                                                  msg: 'Login Successfull with username : ' +
-                                                                      value
-                                                                          .firstName
-                                                                          .toString()),
-                                                            }
-                                                          else
-                                                            {
-                                                              setState(() {
-                                                                isloading =
-                                                                    false;
-                                                              }),
-                                                              Fluttertoast
-                                                                  .showToast(
-                                                                      msg:
-                                                                          'Failed to login ')
-                                                            },
-                                                          print(
-                                                              value.toString()),
+                                                      if (value.firstName !=
+                                                          null)
+                                                        {
+                                                          setState(() {
+                                                            isloading = false;
+                                                          }),
+                                                          StoreProvider.of<
+                                                                      Appstate>(
+                                                                  context)
+                                                              .dispatch(MyUser(
+                                                                  value)),
+                                                          print(value),
+                                                          Fluttertoast.showToast(
+                                                              msg: 'Login Successfull with username : ' +
+                                                                  value
+                                                                      .firstName
+                                                                      .toString()),
+                                                          Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        home_2()),
+                                                          )
                                                         }
-
-                                                    // Navigator.push(
-                                                    //   context,
-                                                    //   MaterialPageRoute(
-                                                    //       builder: (context) => Otpauthentication()),
-                                                    // )
-                                                    )
+                                                      else
+                                                        {
+                                                          setState(() {
+                                                            isloading = false;
+                                                          }),
+                                                          Fluttertoast.showToast(
+                                                              msg:
+                                                                  'Failed to login ')
+                                                        },
+                                                      print(value.toString()),
+                                                    })
                                           },
                                       })
                               : Container(

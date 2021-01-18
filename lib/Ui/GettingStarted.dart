@@ -14,17 +14,9 @@ class GettingStarted extends StatefulWidget {
 }
 
 class GettingStartedState extends State<GettingStarted> {
-  // bool agree;
-  // String confirmpassword;
-  // String firstname;
-  String gender;
-  // String lastname;
-  // String password;
-  // String phoneno;
+  String gender = 'M';
   int radioValue = 0;
-  //method for check box
   bool rememberMe = false;
-
   bool valid = true;
   bool isloading = false;
 
@@ -222,7 +214,7 @@ class GettingStartedState extends State<GettingStarted> {
                                 controller: _emailcontroller,
                                 hintText: 'z.yasin@agilesolutions.com',
                                 // isPassword: true,
-                                isnumber: true,
+                                isnumber: false,
                                 prefixIcon: Icons.mail,
                                 suffixIcon: _emailcontroller.text.length == 8
                                     ? Icons.check_circle
@@ -376,7 +368,7 @@ class GettingStartedState extends State<GettingStarted> {
                                           textColor: Colors.white,
                                           fontSize: 16.0),
                                     }
-                                  else if (_phonenocontroller.text.length != 8)
+                                  else if (_phonenocontroller.text.length <= 8)
                                     {
                                       Fluttertoast.showToast(
                                           msg:
@@ -454,6 +446,14 @@ class GettingStartedState extends State<GettingStarted> {
                                                             msg: 'Sign up Successfull with username : ' +
                                                                 value.firstName
                                                                     .toString()),
+
+                                                        Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder:
+                                                                  (context) =>
+                                                                      login()),
+                                                        )
                                                       }
                                                     else
                                                       {
@@ -462,7 +462,7 @@ class GettingStartedState extends State<GettingStarted> {
                                                         }),
                                                         Fluttertoast.showToast(
                                                             msg:
-                                                                'Failed to login ')
+                                                                'Failed to signup ')
                                                       },
                                                     print(value.toString()),
                                                   }
