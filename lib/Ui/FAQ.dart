@@ -1,20 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jamalik/widgets/header_pink.dart';
 
-// class question extends StatefulWidget {
-//   @override
-//   _questionState createState() => _questionState();
 
-// }
-
-// class _questionState extends State<question> {
-//   bool onclick = false;
-//   String myquestion;
-//   String ans ;
-
-//   question({
-
-//   });
 class question extends StatefulWidget {
   question({
     this.myquestion,
