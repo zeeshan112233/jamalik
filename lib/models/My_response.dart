@@ -4,9 +4,9 @@ class User {
   String firstName;
   String lastName;
   String gender;
-  Null birthDate;
+  String BirthDate;
   String mobile;
-  Null photo;
+  String photo;
   String password;
   String accessToken;
 
@@ -16,7 +16,7 @@ class User {
       this.firstName,
       this.lastName,
       this.gender,
-      this.birthDate,
+      this.BirthDate,
       this.mobile,
       this.photo,
       this.password,
@@ -28,7 +28,7 @@ class User {
     firstName = json['FirstName'];
     lastName = json['LastName'];
     gender = json['Gender'];
-    birthDate = json['BirthDate'];
+    BirthDate = json['BirthDate'];
     mobile = json['Mobile'];
     photo = json['Photo'];
     password = json['Password'];
@@ -42,7 +42,7 @@ class User {
     data['FirstName'] = this.firstName;
     data['LastName'] = this.lastName;
     data['Gender'] = this.gender;
-    data['BirthDate'] = this.birthDate;
+    data['BirthDate'] = this.BirthDate;
     data['Mobile'] = this.mobile;
     data['Photo'] = this.photo;
     data['Password'] = this.password;

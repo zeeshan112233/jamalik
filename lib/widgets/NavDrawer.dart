@@ -4,6 +4,7 @@ import 'package:jamalik/Ui/Favourites.dart';
 import 'package:jamalik/Ui/MyServices1.dart';
 import 'package:jamalik/Ui/ParadiseBeautySalon.dart';
 import 'package:jamalik/Ui/Payment.dart';
+import 'package:jamalik/Ui/Profile.dart';
 import 'package:jamalik/Ui/ProviderScreen.dart';
 import 'package:jamalik/Ui/Servicesscreen.dart';
 import 'package:jamalik/Ui/aboutapp.dart';
@@ -95,9 +96,19 @@ class NavDrawer extends StatelessWidget {
                                     'Welcome to jamalik',
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  Text(
-                                    'Edit Profile',
-                                    style: TextStyle(color: Colors.white),
+                                  GestureDetector(
+                                    onTap: () => {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => Profile(),
+                                        ),
+                                      )
+                                    },
+                                    child: Text(
+                                      'Edit Profile',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                   ),
                                 ],
                               ),

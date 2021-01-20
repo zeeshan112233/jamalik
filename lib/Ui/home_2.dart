@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:jamalik/Ui/AR.dart';
 import 'package:jamalik/Ui/notification.dart';
+import 'package:jamalik/redux/model/app_state.dart';
 import 'package:jamalik/widgets/dotcard.dart';
 import 'package:jamalik/widgets/header_white.dart';
 import 'package:jamalik/widgets/TF.dart';
@@ -45,12 +47,22 @@ class _State extends State<home_2> {
             preferredSize: Size.fromHeight(screenheight * 0.06),
             child: AppBar(
                 title: Center(
-                  child: Text(
-                    "Welcome $name!",
-                    // textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.w600),
-                  ),
+                  child: StoreConnector<Appstate, Appstate>(
+                      converter: (store) => store.state,
+                      builder: (context, state) {
+                        return Text(
+                          state.user.firstName,
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.w600),
+                        );
+                      }),
+
+                  // Text(
+                  //   "Welcome $name!",
+                  //   // textAlign: TextAlign.center,
+                  //   style: TextStyle(
+                  //       color: Colors.black, fontWeight: FontWeight.w600),
+                  // ),
                 ),
 
                 //  Row(
