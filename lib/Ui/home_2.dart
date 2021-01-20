@@ -14,6 +14,14 @@ class home_2 extends StatefulWidget {
 }
 
 class _State extends State<home_2> {
+  int _cIndex = 0;
+
+  void _incrementTab(index) {
+    setState(() {
+      _cIndex = index;
+    });
+  }
+
   String name = "Aisha";
   bool Beauty = true;
   bool Health = false;
@@ -500,6 +508,43 @@ class _State extends State<home_2> {
                 ],
               ),
             ),
+          ),
+
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: _cIndex,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.purpleAccent,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.purple,
+            items: [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home, color: Colors.white),
+                  title: new Text(
+                    'Home',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.supervised_user_circle, color: Colors.white),
+                  title: new Text(
+                    'F.A.Q',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ))
+            ],
+            onTap: (index) {
+              _incrementTab(index);
+            },
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: new FloatingActionButton(
+            backgroundColor: Colors.pink[300],
+            onPressed: () {},
+            tooltip: 'Increment',
+            child: new Icon(Icons.add),
           ),
         ),
       ),
