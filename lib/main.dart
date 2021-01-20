@@ -41,17 +41,11 @@ class MyApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         title: "Welcome",
-        home: new login(),
-        //welcome class define in ui folder
+        home: new SplashScreen(),
       ),
     );
   }
 }
-
-// void main() => runApp(new MaterialApp(
-//       title: "Welcome",
-//       home: new GettingStarted(), //welcome class define in ui folder
-//     ));
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -68,7 +62,7 @@ class SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => GettingStarted(),
+            builder: (context) => ProviderScreen(),
           ));
     });
   }
