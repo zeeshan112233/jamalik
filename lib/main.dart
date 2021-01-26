@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         title: "Welcome",
-        home: new SplashScreen(),
+        home: new home_2(),
       ),
     );
   }
@@ -62,7 +62,7 @@ class SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProviderScreen(),
+            builder: (context) => login(),
           ));
     });
   }
