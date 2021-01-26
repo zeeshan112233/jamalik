@@ -5,6 +5,10 @@ import 'package:jamalik/widgets/header_white.dart';
 import 'package:jamalik/widgets/TF.dart';
 
 class Servicesscreen extends StatefulWidget {
+
+  final data;
+
+  Servicesscreen(this.data);
   @override
   ServicescreenState createState() => ServicescreenState();
 }
@@ -19,6 +23,7 @@ class ServicescreenState extends State<Servicesscreen> {
     {'text': "Hair Extension", 'customimage': "images/makeup.png"},
     {'text': "Hair Treatment", 'customimage': "images/makeup.png"},
   ];
+  
 
   bool Hairdressingserivices = true;
   bool cosmetology = false;
@@ -96,7 +101,7 @@ class ServicescreenState extends State<Servicesscreen> {
                                         0.05,
                                   ),
                                   Text(
-                                    "Hairdressing Services",
+                                    widget.data,
                                     style: Hairdressingserivices
                                         ? TextStyle(
                                             color: Colors.white,

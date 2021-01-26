@@ -7,6 +7,9 @@ import 'package:jamalik/widgets/dotcard.dart';
 import 'package:jamalik/widgets/header_white.dart';
 import 'package:jamalik/widgets/TF.dart';
 import 'package:jamalik/widgets/NavDrawer.dart';
+import 'package:carousel_pro/carousel_pro.dart';
+import 'package:touchable_opacity/touchable_opacity.dart';
+import 'package:jamalik/Ui/Servicesscreen.dart';
 
 class home_2 extends StatefulWidget {
   @override
@@ -133,37 +136,37 @@ class _State extends State<home_2> {
                   ),
 
                   //location text field
-                  TextField(
-                    controller: null,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      contentPadding: EdgeInsets.all(0),
-                      prefixIcon: Icon(Icons.location_pin),
-                      suffixIcon: Icon(Icons.search),
-                      hintText: 'Enter a search term',
-                      fillColor: Colors.grey.shade300,
-                      filled: true,
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey.shade300,
-                          width: 0.5,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0)),
-                        borderSide: BorderSide(
-                          color: Colors.grey.shade300,
-                          width: 1.0,
-                        ),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey.shade300,
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                  ),
+                  // TextField(
+                  //   controller: null,
+                  //   decoration: InputDecoration(
+                  //     isDense: true,
+                  //     contentPadding: EdgeInsets.all(0),
+                  //     prefixIcon: Icon(Icons.location_pin),
+                  //     suffixIcon: Icon(Icons.search),
+                  //     hintText: 'Enter a search term',
+                  //     fillColor: Colors.grey.shade300,
+                  //     filled: true,
+                  //     focusedBorder: OutlineInputBorder(
+                  //       borderSide: BorderSide(
+                  //         color: Colors.grey.shade300,
+                  //         width: 0.5,
+                  //       ),
+                  //     ),
+                  //     enabledBorder: OutlineInputBorder(
+                  //       borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                  //       borderSide: BorderSide(
+                  //         color: Colors.grey.shade300,
+                  //         width: 1.0,
+                  //       ),
+                  //     ),
+                  //     border: OutlineInputBorder(
+                  //       borderSide: BorderSide(
+                  //         color: Colors.grey.shade300,
+                  //         width: 1.0,
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
 
                   // Row(
                   //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -179,13 +182,38 @@ class _State extends State<home_2> {
 
                   SizedBox(height: 5),
                   Center(
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Image.asset(
-                          "images/home_2pic.png",
-                          width: screenwidth,
-                          height: screenheight * 0.20,
-                          fit: BoxFit.fill,
+                    // child: ClipRRect(
+                    //     borderRadius: BorderRadius.circular(10.0),
+                    //     child: Image.asset(
+                    //       "images/home_2pic.png",
+                    //       width: screenwidth,
+                    //       height: screenheight * 0.25,
+                    //       fit: BoxFit.fill,
+                    //     )),
+                    child: SizedBox(
+                        height: screenheight * 0.25,
+                        width: screenwidth,
+                        child: Carousel(
+                          indicatorBgPadding: 0.0,
+                          dotColor: Colors.pink[300],
+                          //moveIndicatorFromBottom: 180.0,
+                          //noRadiusForIndicator: true,
+                          boxFit: BoxFit.fill,
+                          borderRadius: true,
+                          radius: Radius.circular(10),
+                          images: [
+                            NetworkImage(
+                              'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg',
+                            ),
+                            NetworkImage(
+                                'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                            Image.asset(
+                              "images/home_2pic.png",
+                              width: screenwidth,
+                              height: screenheight * 0.25,
+                              //  fit: BoxFit.fill,
+                            ),
+                          ],
                         )),
                   ),
 
@@ -252,7 +280,7 @@ class _State extends State<home_2> {
                                 ),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: 8, horizontal: 30.0),
+                                      vertical: 5, horizontal: 20.0),
                                   decoration: ShapeDecoration(
                                     shape: StadiumBorder(),
                                     gradient: Beauty
@@ -349,7 +377,7 @@ class _State extends State<home_2> {
                                 ),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: 8, horizontal: 30.0),
+                                      vertical: 5, horizontal: 20.0),
                                   decoration: ShapeDecoration(
                                     shape: StadiumBorder(),
                                     gradient: Health
@@ -434,7 +462,7 @@ class _State extends State<home_2> {
                                 ),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
-                                      vertical: 8, horizontal: 30.0),
+                                      vertical: 5, horizontal: 20.0),
                                   decoration: ShapeDecoration(
                                     shape: StadiumBorder(),
                                     gradient: other
@@ -543,7 +571,7 @@ class _State extends State<home_2> {
           floatingActionButton: new FloatingActionButton(
             backgroundColor: Colors.pink[300],
             onPressed: () {},
-            tooltip: 'Increment',
+            //tooltip: 'Increment',
             child: new Icon(Icons.add),
           ),
         ),
