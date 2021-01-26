@@ -14,8 +14,7 @@ class _CalenderState extends State<Calender> {
   final String text = "Select Date & Time";
   var schedule = [
     {
-      "morning": 
-      [
+      "morning": [
         "10:00 AM ",
         "10:30 AM ",
         "11:00 AM ",
@@ -25,10 +24,7 @@ class _CalenderState extends State<Calender> {
         "10:30 AM ",
         "11:00 AM "
       ],
-    
-    
-      "afternoon": 
-      [
+      "afternoon": [
         "01:00 AM ",
         "01:30 AM ",
         "02:00 AM ",
@@ -38,10 +34,7 @@ class _CalenderState extends State<Calender> {
         "02:30 AM ",
         "03:30 AM "
       ],
-    
-    
-      "evening": 
-      [
+      "evening": [
         "06:00 AM ",
         "06:30 AM ",
         "07:00 AM ",
@@ -359,7 +352,6 @@ class _CalenderState extends State<Calender> {
                         },
                       ),
                     ),
-                    
                   ],
                 ),
               ),

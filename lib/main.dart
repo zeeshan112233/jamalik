@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/FAQ.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:jamalik/Ui/Gakhar.dart';
 import 'package:jamalik/Ui/GettingStarted.dart';

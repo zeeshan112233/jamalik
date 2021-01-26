@@ -201,7 +201,7 @@ class NavDrawer extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Servicesscreen(),
+                        builder: (context) => Servicesscreen("hello"),
                       ),
                     )
                   },
