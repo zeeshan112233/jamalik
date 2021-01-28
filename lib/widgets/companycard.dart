@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jamalik/Ui/Calender.dart';
 
 class companycard extends StatelessWidget {
   companycard({
@@ -103,7 +104,13 @@ class companycard extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.13,
             ),
             RaisedButton(
-              onPressed: () => print("hey "),
+              onPressed: () => {print("hey "),
+               Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Calender(),
+          ))
+              },
               shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(5)),
               color: Colors.white,

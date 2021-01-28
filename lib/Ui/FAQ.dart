@@ -89,12 +89,12 @@ class _FaqState extends State<Faq> {
   var myQuestions = [
     {
       "question": "What is VAO-Assistant?",
-      "answer": "Main nahi btau ga. Yeh batain btai nahi j. Nazar Lag jati hai",
+      "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus feugiat leo. Duis nec vestibulum tortor.",
     },
     {
       "question": "Where can i see my appointments?",
       "answer":
-          "I dont Know djsak asfads fds fdsfd lijlk i j hjioi refcsdcdfrfvdscdscscdf rrfgvdfvdf",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus feugiat leo. Duis nec vestibulum tortor.",
     }
   ];
 

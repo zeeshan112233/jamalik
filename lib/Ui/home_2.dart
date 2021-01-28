@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:jamalik/Ui/AR.dart';
+import 'package:jamalik/Ui/FAQ.dart';
+import 'package:jamalik/Ui/Favourites.dart';
 import 'package:jamalik/Ui/notification.dart';
 import 'package:jamalik/redux/model/app_state.dart';
 import 'package:jamalik/widgets/dotcard.dart';
@@ -61,10 +62,10 @@ class _State extends State<home_2> {
                   child: StoreConnector<Appstate, Appstate>(
                       converter: (store) => store.state,
                       builder: (context, state) {
-                        return Text(
+                        return Text("Welcome "+
                           state.user.firstName,
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.w600),
+                              color: Colors.black, fontWeight: FontWeight.w800),
                         );
                       }),
 
@@ -122,7 +123,8 @@ class _State extends State<home_2> {
           //   dp: "images/logo.png",
           //   name: "Ifraham :p",
           // ),
-          body: Container(
+          body: _cIndex == 0
+              ? Container(
             height: screenheight - kToolbarHeight,
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -202,17 +204,31 @@ class _State extends State<home_2> {
                           borderRadius: true,
                           radius: Radius.circular(10),
                           images: [
-                            NetworkImage(
-                              'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg',
-                            ),
-                            NetworkImage(
-                                'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                            Image.asset(
+                           Image.asset(
                               "images/home_2pic.png",
                               width: screenwidth,
                               height: screenheight * 0.25,
-                              //  fit: BoxFit.fill,
+                               fit: BoxFit.fill,
                             ),
+                            Image.asset(
+                              "images/private1.jpeg",
+                              width: screenwidth,
+                              height: screenheight * 0.25,
+                               fit: BoxFit.fill,
+                            ), Image.asset(
+                              "images/private2.jpeg",
+                              width: screenwidth,
+                              height: screenheight * 0.25,
+                               fit: BoxFit.fill,
+                            ),
+                             Image.asset(
+                              "images/company2.jpeg",
+                              width: screenwidth,
+                              height: screenheight * 0.25,
+                               fit: BoxFit.fill,
+                            ),
+
+                            
                           ],
                         )),
                   ),
@@ -536,7 +552,8 @@ class _State extends State<home_2> {
                 ],
               ),
             ),
-          ),
+          ):
+          Faq(),
 
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _cIndex,
@@ -570,9 +587,17 @@ class _State extends State<home_2> {
               FloatingActionButtonLocation.centerDocked,
           floatingActionButton: new FloatingActionButton(
             backgroundColor: Colors.pink[300],
-            onPressed: () {},
+            onPressed: () {
+ Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Favourite(),
+          ));
+
+
+            },
             //tooltip: 'Increment',
-            child: new Icon(Icons.add),
+            child: new Icon(Icons.library_add_check_rounded)
           ),
         ),
       ),

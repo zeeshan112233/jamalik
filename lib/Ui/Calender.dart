@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:calendar_timeline/calendar_timeline.dart';
+import 'package:jamalik/Ui/Checkout.dart';
+import 'package:jamalik/Ui/Payment.dart';
 import 'package:jamalik/Ui/home_2.dart';
+import 'package:jamalik/widgets/PaymentWidget.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
 
 class Calender extends StatefulWidget {
@@ -9,6 +12,9 @@ class Calender extends StatefulWidget {
 }
 
 class _CalenderState extends State<Calender> {
+  dynamic initialDate= DateTime(2020, 2, 20);
+ dynamic firstDate= DateTime(2020, 2, 15);
+ dynamic      lastDate= DateTime(2021, 11, 20);
   bool isClicked = false;
   final String Back = "images/back.png";
   final String text = "Select Date & Time";
@@ -115,9 +121,9 @@ class _CalenderState extends State<Calender> {
                     Container(
                       height: MediaQuery.of(context).size.height * 0.2,
                       child: CalendarTimeline(
-                        initialDate: DateTime(2020, 2, 20),
-                        firstDate: DateTime(2020, 2, 15),
-                        lastDate: DateTime(2021, 11, 20),
+                        initialDate: initialDate,
+                        firstDate: firstDate,
+                        lastDate: lastDate,
                         onDateSelected: (date) => print(date),
                         leftMargin: 20,
                         monthColor: Colors.white,
@@ -559,9 +565,12 @@ class _CalenderState extends State<Calender> {
                 ],
               ),
               GestureDetector(
-                onTap: () {
-                  print("Schedule Clicked");
-                },
+              
+                 onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Checkout()),
+                              ),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.1,

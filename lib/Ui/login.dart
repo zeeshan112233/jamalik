@@ -109,7 +109,7 @@ class _loginState extends State<login> {
                                   isnumber: true,
                                   prefixIcon: Icons.phone_android,
                                   suffixIcon:
-                                      _phonenocontroller.text.length == 8
+                                      _phonenocontroller.text.isNotEmpty
                                           ? Icons.check_circle
                                           : null,
                                   tfColor: Colors.grey.shade300,

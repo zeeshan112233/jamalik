@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jamalik/Ui/FAQ.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:jamalik/Ui/Gakhar.dart';
 import 'package:jamalik/Ui/GettingStarted.dart';
 import 'package:jamalik/Ui/Otpauthentication.dart';
 import 'package:jamalik/Ui/Passwordrecovery.dart';
@@ -20,7 +18,6 @@ import 'package:jamalik/redux/model/app_state.dart';
 import 'package:jamalik/redux/reducers.dart';
 import 'package:jamalik/widgets/Serviceswidget.dart';
 import 'package:redux/redux.dart';
-import './Ui/welcome_home.dart';
 import 'package:jamalik/Ui/Checkout.dart';
 import 'package:jamalik/Ui/Calender.dart';
 
@@ -42,7 +39,7 @@ class MyApp extends StatelessWidget {
       store: store,
       child: MaterialApp(
         title: "Welcome",
-        home: new home_2(),
+        home: new SplashScreen(),
       ),
     );
   }
@@ -63,7 +60,7 @@ class SplashScreenState extends State<SplashScreen> {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => login(),
+            builder: (context) => GettingStarted(),
           ));
     });
   }
