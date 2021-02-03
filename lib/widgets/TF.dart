@@ -47,7 +47,7 @@ class TF extends StatelessWidget {
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(90.0)),
+            borderRadius: BorderRadius.all(Radius.circular(15.0)),
             borderSide: BorderSide(
               color: Colors.grey.shade300,
               width: 1.0,

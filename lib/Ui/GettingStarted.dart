@@ -102,8 +102,8 @@ class GettingStartedState extends State<GettingStarted> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: new BorderRadius.only(
-                        topLeft: const Radius.circular(50.0),
-                        topRight: const Radius.circular(50.0),
+                        topLeft: const Radius.circular(90.0),
+                        topRight: const Radius.circular(90.0),
                         // bottomLeft: const Radius.circular(10.0),
                         // bottomRight: const Radius.circular(10.0),
                       ),
@@ -490,12 +490,16 @@ class GettingStartedState extends State<GettingStarted> {
                                 },
                               )
                             : Container(
-                                child: Center(
-                                  child: CircularProgressIndicator(),
+                                  child: Center(
+                                    child:  Image.asset(
+            'images/V2-White-BG.gif',
+            width: MediaQuery.of(context).size.width*0.15,
+            height: MediaQuery.of(context).size.height*0.15,
+          ),
+                                  ),
                                 ),
-                              ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.07,
+                          height: MediaQuery.of(context).size.height * 0.1,
                         ),
                       ],
                     ),
