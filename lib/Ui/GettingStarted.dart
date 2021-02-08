@@ -39,6 +39,7 @@ class GettingStartedState extends State<GettingStarted> {
 
   //phone no textfield
   final TextEditingController _phonenocontroller = new TextEditingController();
+  final TextEditingController _usernamecontroller = new TextEditingController();
 
   // final TextEditingController _phonenocontroller = new TextEditingController();
 
@@ -135,6 +136,27 @@ class GettingStartedState extends State<GettingStarted> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  left:
+                                      MediaQuery.of(context).size.width * 0.04,
+                                ),
+                                child: Text("User Name"),
+                              ),
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.02,
+                              ),
+                              TF(
+                                controller: _usernamecontroller,
+                                hintText: 'Zeehan123',
+                                // isPassword: true,
+                                prefixIcon: Icons.person_outline,
+                                suffixIcon: _usernamecontroller.text.isNotEmpty
+                                    ? Icons.check_circle
+                                    : null,
+                                tfColor: Colors.grey.shade300,
+                              ),
                               Padding(
                                 padding: EdgeInsets.only(
                                   left:
@@ -334,11 +356,13 @@ class GettingStartedState extends State<GettingStarted> {
                                 style: TextStyle(
                                     color: Colors.pink.shade600, fontSize: 20),
                               ),
-                              onTap: () => {Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => login(),
-          ))},
+                              onTap: () => {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => login(),
+                                    ))
+                              },
                             ),
                           ],
                         ),
@@ -422,11 +446,24 @@ class GettingStartedState extends State<GettingStarted> {
                                     }
                                   else
                                     {
+                                      //  Navigator.push(
+                                      //             context,
+                                      //             MaterialPageRoute(
+                                      //                 builder:
+                                      //                     (context) =>
+                                      //                         login()),
+                                      //           )
+
                                       setState(() {
                                         isloading = true;
                                       }),
                                       Signup()
                                           .signup(
+                                              username:
+                                                  _usernamecontroller.text,
+                                              confirmpassword:
+                                                  _confirmpasswordcontroller
+                                                      .text,
                                               firstName:
                                                   _firstnamecontroller.text,
                                               lastName:
@@ -438,66 +475,47 @@ class GettingStartedState extends State<GettingStarted> {
                                               phonenumber:
                                                   _phonenocontroller.text)
                                           .then((value) => {
-                                                    if (value.firstName != null)
-                                                      {
-                                                        setState(() {
-                                                          isloading = false;
-                                                        }),
-                                                        // StoreProvider.of<Appstate>(context)
-                                                        //     .dispatch(MyUser(value.user)),
-                                                        print(value),
-                                                        Fluttertoast.showToast(
-                                                            msg: 'Sign up Successfull with username : ' +
-                                                                value.firstName
-                                                                    .toString()),
-
-                                                        Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                              builder:
-                                                                  (context) =>
-                                                                      login()),
-                                                        )
-                                                      }
-                                                    else
-                                                      {
-                                                        setState(() {
-                                                          isloading = false;
-                                                        }),
-                                                        Fluttertoast.showToast(
-                                                            msg:
-                                                                'Failed to signup ')
-                                                      },
-                                                    print(value.toString()),
+                                                if (value["IsOk"] == true)
+                                                  {
+                                                    setState(() {
+                                                      isloading = false;
+                                                    }),
+                                                    print(value),
+                                                    Fluttertoast.showToast(
+                                                        msg:
+                                                            'Sign up Successfull with username : '),
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              login()),
+                                                    )
                                                   }
-
-                                              // Navigator.push(
-                                              //   context,
-                                              //   MaterialPageRoute(
-                                              //       builder: (context) => Otpauthentication()),
-                                              // )
-                                              )
+                                                else
+                                                  {
+                                                    setState(() {
+                                                      isloading = false;
+                                                    }),
+                                                    Fluttertoast.showToast(
+                                                        msg:
+                                                            value['Errors'].toString())
+                                                  },
+                                                print(value.toString()),
+                                              })
                                     },
-
-                                  // print(_firstnamecontroller.text.length),
-                                  // print(_lastnamecontroller.text),
-                                  // print(_passwordcontroller.text),
-
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) => login()),
-                                  // )
                                 },
                               )
                             : Container(
-                                  child: Center(
-                                    child:  Image.asset(
-            'images/V2-White-BG.gif',
-            width: MediaQuery.of(context).size.width*0.15,
-            height: MediaQuery.of(context).size.height*0.15,
-          ),
+                                child: Center(
+                                  child: Image.asset(
+                                    'images/V2-White-BG.gif',
+                                    width: MediaQuery.of(context).size.width *
+                                        0.15,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.15,
                                   ),
                                 ),
+                              ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.1,
                         ),

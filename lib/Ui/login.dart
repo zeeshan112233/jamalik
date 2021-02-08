@@ -202,6 +202,8 @@ class _loginState extends State<login> {
                                           }
                                         else
                                           {
+                                                            
+                                          
                                             setState(() {
                                               isloading = true;
                                             }),
@@ -213,23 +215,23 @@ class _loginState extends State<login> {
                                                     phonenumber:
                                                         _phonenocontroller.text)
                                                 .then((value) => {
-                                                      if (value.firstName !=
-                                                          null)
+                                                      if (value["access_token"]!=null)
                                                         {
                                                           setState(() {
                                                             isloading = false;
                                                           }),
-                                                          StoreProvider.of<
-                                                                      Appstate>(
-                                                                  context)
-                                                              .dispatch(MyUser(
-                                                                  value)),
+                                                          // StoreProvider.of<
+                                                          //             Appstate>(
+                                                          //         context)
+                                                          //     .dispatch(MyUser(
+                                                          //         value)),
                                                           print(value),
                                                           Fluttertoast.showToast(
-                                                              msg: 'Login Successfull with username : ' +
-                                                                  value
-                                                                      .firstName
-                                                                      .toString()),
+                                                              msg: 'Login Successfull with username : ' 
+                                                                 // value
+                                                                   //   .firstName
+                                                                     // .toString()
+                                                                     ),
                                                           Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
@@ -249,7 +251,7 @@ class _loginState extends State<login> {
                                                         },
                                                       print(value.toString()),
                                                     })
-                                          },
+                                           },
                                       })
                               : Container(
                                   child: Center(

@@ -5,33 +5,33 @@ import 'package:http/http.dart' as http;
 import '../models/My_response.dart';
 
 class Login {
-  Future<User> login({
+  Future<dynamic> login({
     String phonenumber,
     String password,
   }) async {
     Map<String, dynamic> body = {
-      'Mobile': phonenumber,
+      'username': phonenumber,
       'Password': password,
+      'grant_type': 'password'
     };
 
     Map<String, String> requestHeaders = {
-      'Accept': 'application/json',
+      'Accept': 'application/x-www-form-urlencoded',
     };
 
-    final uri = 'http://51.222.107.49/api/Customer/CustomerLogin';
+    final uri = 'http://51.222.107.49/Api/token';
 
     http.Response response =
         await http.post(uri, body: body, headers: requestHeaders);
+
     print("my body " + response.body);
 
     if (response.statusCode == 200) {
-      return User.fromJson(
-        json.decode(response.body),
-      );
+      print(" 200 ");
+
+      return json.decode(response.body);
     } else if (response.statusCode == 400) {
-      return User.fromJson(
-        json.decode(response.body),
-      );
+      return json.decode(response.body);
     } else {
       throw Exception('Failed to load data!');
     }

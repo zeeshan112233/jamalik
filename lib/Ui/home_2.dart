@@ -63,7 +63,8 @@ class _State extends State<home_2> {
                       converter: (store) => store.state,
                       builder: (context, state) {
                         return Text("Welcome "+
-                          state.user.firstName,
+//                          state.user.firstName,
+"Zeeshan",
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.w800),
                         );
